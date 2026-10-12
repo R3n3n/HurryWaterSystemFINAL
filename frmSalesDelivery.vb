@@ -1,0 +1,237 @@
+﻿Imports MySql.Data.MySqlClient
+
+Public Class frmSalesDelivery
+    Private isLoading As Boolean = True
+
+    Private auditAvailable As Boolean = True
+
+
+    Private Sub frmSalesDelivery_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        auditAvailable = EnsureOrderAuditColumns()
+        SetupListView()
+
+        cboFilterPickup.Items.Clear()
+        cboFilterPickup.Items.AddRange({"All pickup statuses", "Pending", "Picked-up", "Delivered", "Missed"})
+        cboFilterPickup.SelectedIndex = 0
+
+        cboFilterPayment.Items.Clear()
+        cboFilterPayment.Items.AddRange({"All payment statuses", "Unpaid", "Paid"})
+        cboFilterPayment.SelectedIndex = 0
+
+        btnUpdateStatus.Enabled = False
+        btnDeleteOrder.Enabled = False
+
+        Label1.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular)
+
+        isLoading = False
+        LoadOrderList()
+    End Sub
+
+    Private Sub SetupListView()
+        lsvOrders.View = View.Details
+        lsvOrders.FullRowSelect = True
+        lsvOrders.GridLines = True
+        lsvOrders.HideSelection = False
+
+        lsvOrders.Columns.Clear()
+        lsvOrders.Columns.Add("Order No.", 140)
+        lsvOrders.Columns.Add("Order Date", 170)
+        lsvOrders.Columns.Add("Customer", 270)
+        lsvOrders.Columns.Add("Pickup Status", 170)
+        lsvOrders.Columns.Add("Payment", 120)
+        lsvOrders.Columns.Add("Total", 150, HorizontalAlignment.Right)
+        lsvOrders.Columns.Add("Recorded By", 190)
+        lsvOrders.Columns.Add("Last Updated By", 200)
+    End Sub
+
+    Private Sub LoadOrderList()
+        lsvOrders.Items.Clear()
+        UpdateWeekSummary()
+
+        sql = "SELECT o.orderId, o.orderDate, c.customerName, o.pickupStatus, " &
+              "       o.paymentStatus, o.totalAmount, ru.fullName AS recordedByName, " &
+              If(auditAvailable, "hu.fullName AS handledByName ", "NULL AS handledByName ") &
+              "FROM tblSalesOrders o " &
+              "INNER JOIN tblCustomers c ON o.customerId = c.customerId " &
+              "LEFT JOIN tblUsers ru ON ru.userId = o.userId " &
+              If(auditAvailable, "LEFT JOIN tblUsers hu ON hu.userId = o.handledBy ", "") &
+              "WHERE (c.customerName LIKE @search " &
+              "       OR CONCAT('ORD-', LPAD(o.orderId, 5, '0')) LIKE @search " &
+              "       OR CAST(o.orderId AS CHAR) = @exact)"
+
+        Dim filterPickup As Boolean = (cboFilterPickup.SelectedIndex > 0)
+        Dim filterPayment As Boolean = (cboFilterPayment.SelectedIndex > 0)
+
+        If filterPickup Then sql &= " AND o.pickupStatus = @pickupStatus"
+        If filterPayment Then sql &= " AND o.paymentStatus = @paymentStatus"
+        sql &= " ORDER BY o.orderDate DESC, o.orderId DESC"
+
+        Try
+            connection()
+            cmd = New MySqlCommand(sql, cn)
+            cmd.Parameters.AddWithValue("@search", "%" & txtSearch.Text.Trim() & "%")
+            cmd.Parameters.AddWithValue("@exact", txtSearch.Text.Trim())
+            If filterPickup Then cmd.Parameters.AddWithValue("@pickupStatus", cboFilterPickup.Text)
+            If filterPayment Then cmd.Parameters.AddWithValue("@paymentStatus", cboFilterPayment.Text)
+            dr = cmd.ExecuteReader()
+
+            While dr.Read()
+                Dim item As New ListViewItem(FormatOrderNo(CInt(dr("orderId"))))
+                item.SubItems.Add(CDate(dr("orderDate")).ToString("MMM d, yyyy"))
+                item.SubItems.Add(dr("customerName").ToString())
+                item.SubItems.Add(dr("pickupStatus").ToString())
+                item.SubItems.Add(dr("paymentStatus").ToString())
+                item.SubItems.Add("₱" & CDec(dr("totalAmount")).ToString("N2"))
+                item.SubItems.Add(If(IsDBNull(dr("recordedByName")), "—", dr("recordedByName").ToString()))
+                item.SubItems.Add(If(IsDBNull(dr("handledByName")), "—", dr("handledByName").ToString()))
+                item.Tag = dr("orderId")
+
+                If dr("paymentStatus").ToString() = "Unpaid" Then
+                    item.BackColor = Color.MistyRose
+                End If
+
+                lsvOrders.Items.Add(item)
+            End While
+
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("Error loading orders: " & ex.Message, MsgBoxStyle.Critical)
+        Finally
+            If cn.State = ConnectionState.Open Then cn.Close()
+        End Try
+    End Sub
+
+    Private Sub UpdateWeekSummary()
+        Dim monday As Date = Date.Today.AddDays(-((CInt(Date.Today.DayOfWeek) + 6) Mod 7))
+        Dim thisWeek As Long = 0
+        Dim stillActive As Long = 0
+
+        Try
+            connection()
+            sql = "SELECT COUNT(*) FROM tblSalesOrders WHERE orderDate >= @monday AND orderDate <= @today"
+            cmd = New MySqlCommand(sql, cn)
+            cmd.Parameters.AddWithValue("@monday", monday)
+            cmd.Parameters.AddWithValue("@today", Date.Today)
+            thisWeek = CLng(cmd.ExecuteScalar())
+
+            sql = "SELECT COUNT(*) FROM tblSalesOrders WHERE pickupStatus IN ('Pending', 'Picked-up')"
+            cmd = New MySqlCommand(sql, cn)
+            stillActive = CLng(cmd.ExecuteScalar())
+        Catch ex As Exception
+            Label1.Text = "—"
+            Return
+        Finally
+            If cn.State = ConnectionState.Open Then cn.Close()
+        End Try
+
+        Label1.Text = thisWeek.ToString() & If(thisWeek = 1, " order", " orders") & " this week  ·  " &
+                      stillActive.ToString() & " still active"
+    End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        If isLoading Then Return
+        LoadOrderList()
+    End Sub
+
+    Private Sub cboFilterPickup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFilterPickup.SelectedIndexChanged
+        If isLoading Then Return
+        LoadOrderList()
+    End Sub
+
+    Private Sub cboFilterPayment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFilterPayment.SelectedIndexChanged
+        If isLoading Then Return
+        LoadOrderList()
+    End Sub
+
+    Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
+        Dim addForm As New frmAddSalesOrder()
+
+        If addForm.ShowDialog() = DialogResult.OK Then
+            LoadOrderList()
+        End If
+
+        addForm.Dispose()
+    End Sub
+
+
+    Private Sub lsvOrders_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvOrders.SelectedIndexChanged
+        btnUpdateStatus.Enabled = (lsvOrders.SelectedItems.Count > 0)
+        btnDeleteOrder.Enabled = (lsvOrders.SelectedItems.Count > 0)
+    End Sub
+
+    Private Sub btnUpdateStatus_Click(sender As Object, e As EventArgs) Handles btnUpdateStatus.Click
+        OpenUpdateStatusModal()
+    End Sub
+
+    Private Sub lsvOrders_DoubleClick(sender As Object, e As EventArgs) Handles lsvOrders.DoubleClick
+        OpenUpdateStatusModal()
+    End Sub
+
+    Private Sub OpenUpdateStatusModal()
+        If lsvOrders.SelectedItems.Count = 0 Then
+            MsgBox("Select an order first.", MsgBoxStyle.Exclamation, "No selection")
+            Return
+        End If
+
+        Dim statusForm As New frmUpdateOrderStatus()
+        statusForm.OrderId = CInt(lsvOrders.SelectedItems(0).Tag)
+
+        If statusForm.ShowDialog() = DialogResult.OK Then
+            LoadOrderList()
+        End If
+
+        statusForm.Dispose()
+    End Sub
+
+    ''' <summary>
+    ''' The Delete button: asks for confirmation, then deletes the selected order
+    ''' (and its items) for good.
+    ''' </summary>
+    Private Sub btnDeleteOrder_Click(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
+        If lsvOrders.SelectedItems.Count = 0 Then
+            MsgBox("Select an order first.", MsgBoxStyle.Exclamation, "No selection")
+            Return
+        End If
+
+        Dim selected As ListViewItem = lsvOrders.SelectedItems(0)
+        Dim orderId As Integer = CInt(selected.Tag)
+
+        Dim msg As String = "Delete order " & selected.Text & " for " & selected.SubItems(2).Text &
+                            " (" & selected.SubItems(5).Text & ")?" & vbCrLf & vbCrLf &
+                            "The order and its items will be removed permanently."
+
+        If MsgBox(msg, MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation + MsgBoxStyle.DefaultButton2, "Confirm Delete") <> MsgBoxResult.Yes Then Return
+
+        Dim txn As MySqlTransaction = Nothing
+        Try
+            connection()
+            txn = cn.BeginTransaction()
+
+            sql = "DELETE FROM tblSalesOrderDetails WHERE orderId = @id"
+            cmd = New MySqlCommand(sql, cn, txn)
+            cmd.Parameters.AddWithValue("@id", orderId)
+            cmd.ExecuteNonQuery()
+
+            sql = "DELETE FROM tblSalesOrders WHERE orderId = @id"
+            cmd = New MySqlCommand(sql, cn, txn)
+            cmd.Parameters.AddWithValue("@id", orderId)
+            cmd.ExecuteNonQuery()
+
+            txn.Commit()
+        Catch ex As Exception
+            If txn IsNot Nothing Then
+                Try
+                    txn.Rollback()
+                Catch
+                End Try
+            End If
+            MsgBox("Could not delete the order: " & ex.Message, MsgBoxStyle.Critical, "Error")
+            Return
+        Finally
+            If cn.State = ConnectionState.Open Then cn.Close()
+        End Try
+
+        LoadOrderList()
+    End Sub
+
+End Class
