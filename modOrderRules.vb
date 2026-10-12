@@ -1,8 +1,5 @@
 ﻿Module modOrderRules
 
-    ' Orders that really count toward sales and unpaid totals.
-    '   Missed = nothing was handed over, so no sale and nothing owed.
-    ' Add it to a query with:  "... AND " & CountedOrders
     Public Const CountedOrders As String = "pickupStatus <> 'Missed'"
     Public Function FormatOrderNo(orderId As Integer) As String
         Return "ORD-" & orderId.ToString("00000")

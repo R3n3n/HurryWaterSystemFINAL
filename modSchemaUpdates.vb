@@ -57,9 +57,6 @@ Module modSchemaUpdates
         End Try
     End Function
 
-    ''' <summary>
-    ''' Hole 14: lets an expense remember which stock-in created it.
-    ''' </summary>
     Public Function EnsureExpenseStockLink() As Boolean
         Try
             connection()
