@@ -25,6 +25,7 @@ Partial Class frmExpenses
         Me.lblSalesDelivery = New System.Windows.Forms.Label()
         Me.btnAddExpense = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.lblGasTotal = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblSuppliesTotal = New System.Windows.Forms.Label()
@@ -38,7 +39,6 @@ Partial Class frmExpenses
         Me.lsvExpenses = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnEdit = New Guna.UI2.WinForms.Guna2GradientButton()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -85,6 +85,18 @@ Partial Class frmExpenses
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(320, 234)
         Me.Guna2Panel1.TabIndex = 32
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Gray
+        Me.Label5.Location = New System.Drawing.Point(27, 57)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(257, 30)
+        Me.Label5.TabIndex = 36
+        Me.Label5.Text = "UTILITIES - THIS MONTH"
         '
         'lblGasTotal
         '
@@ -206,7 +218,7 @@ Partial Class frmExpenses
         'lsvExpenses
         '
         Me.lsvExpenses.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
-        Me.lsvExpenses.Font = New System.Drawing.Font("Segoe UI Semibold", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lsvExpenses.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lsvExpenses.HideSelection = False
         Me.lsvExpenses.Location = New System.Drawing.Point(56, 481)
         Me.lsvExpenses.Name = "lsvExpenses"
@@ -235,18 +247,6 @@ Partial Class frmExpenses
         Me.btnEdit.Size = New System.Drawing.Size(246, 96)
         Me.btnEdit.TabIndex = 58
         Me.btnEdit.Text = "Edit Expense"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Gray
-        Me.Label5.Location = New System.Drawing.Point(27, 57)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(257, 30)
-        Me.Label5.TabIndex = 36
-        Me.Label5.Text = "UTILITIES - THIS MONTH"
         '
         'frmExpenses
         '

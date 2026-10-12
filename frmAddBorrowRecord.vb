@@ -3,18 +3,17 @@ Imports System.Text.RegularExpressions
 
 Public Class frmAddBorrowRecord
 
-    ' Dispenser references must look exactly like DSP-015 (DSP, a dash, 3 digits)
     Private Shared ReadOnly DispenserRefPattern As New Regex("^DSP-\d{3}$", RegexOptions.Compiled)
     Private isFormattingRef As Boolean = False
 
     Private Sub frmAddBorrowRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadCustomers()
 
-        txtDispenserRef.MaxLength = 7   ' "DSP-###" is always 7 characters
+        txtDispenserRef.MaxLength = 7
 
-        dtpDateBorrowed.MaxDate = Date.Today   ' a dispenser can't have been lent out in the future
+        dtpDateBorrowed.MaxDate = Date.Today
         dtpDateBorrowed.Value = Date.Today
-        dtpExpectedReturn.Value = Date.Today.AddDays(14)   ' reasonable default, adjust as needed
+        dtpExpectedReturn.Value = Date.Today.AddDays(14)
     End Sub
 
     Private Sub LoadCustomers()
@@ -31,7 +30,6 @@ Public Class frmAddBorrowRecord
         cboCustomer.SelectedIndex = -1
     End Sub
 
-    ''' <summary>Only letters, digits and "-" can be typed; letters are shown in capitals.</summary>
     Private Sub txtDispenserRef_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDispenserRef.KeyPress
         If Char.IsControl(e.KeyChar) Then Return
         If Not (Char.IsLetterOrDigit(e.KeyChar) OrElse e.KeyChar = "-"c) Then e.Handled = True
@@ -95,8 +93,6 @@ Public Class frmAddBorrowRecord
             End If
         End If
 
-        ' Expected return can't be before the borrow date itself —
-        ' catches an easy date-picker mistake before it hits the database
         If dtpExpectedReturn.Value.Date < dtpDateBorrowed.Value.Date Then
             errorProvider1.SetError(dtpExpectedReturn, "Expected return date can't be before the borrow date.")
             isValid = False
@@ -105,10 +101,6 @@ Public Class frmAddBorrowRecord
         Return isValid
     End Function
 
-    ''' <summary>
-    ''' Returns the name of the customer who still has this dispenser (not yet returned),
-    ''' or "" if it is free. A dispenser can only be out with one customer at a time.
-    ''' </summary>
     Private Function FindCurrentBorrower(dispenserRef As String) As String
         Try
             connection()
@@ -129,7 +121,6 @@ Public Class frmAddBorrowRecord
     End Function
 
     Private Sub SaveBorrowRecord()
-        ' re-check right before saving, in case someone else just borrowed it
         Dim holder As String = FindCurrentBorrower(txtDispenserRef.Text.Trim().ToUpper())
         If holder <> "" Then
             Throw New InvalidOperationException(txtDispenserRef.Text.Trim().ToUpper() & " is still borrowed by " & holder & ".")
