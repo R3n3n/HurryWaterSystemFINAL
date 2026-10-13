@@ -4,7 +4,6 @@ Imports MySql.Data.MySqlClient
 Public Class frmEditCustomer
     Public Property CustomerID As Integer
     Private Sub frmEditCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Guna2HtmlLabel1.Text = "CONTACT NUMBER (optional)"
         If CustomerID > 0 Then
             LoadCustomerData()
         End If

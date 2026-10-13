@@ -44,6 +44,11 @@ Public Class frmAddCustomer
             isValid = False
         End If
 
+        If txtContactNo.Text.Trim() = "" Then
+            errorProvider1.SetError(txtContactNo, "Enter your contact number.")
+            isValid = False
+        End If
+
         If cboCustomerType.SelectedIndex = -1 Then
             errorProvider1.SetError(cboCustomerType, "Select a customer type.")
             isValid = False
@@ -65,11 +70,6 @@ Public Class frmAddCustomer
         Return isValid
     End Function
 
-
-    ''' <summary>
-    ''' Hole 6: stops a second record for the same phone number, and asks before
-    ''' adding someone with an identical name. 
-    ''' </summary>
     Private Function PassesDuplicateCheck() As Boolean
         Dim contact As String = NormalizeContact(txtContactNo.Text)
 
@@ -106,9 +106,5 @@ Public Class frmAddCustomer
         cmd.Parameters.AddWithValue("@cycle", Integer.Parse(txtDeliveryCycle.Text.Trim()))
         cmd.Parameters.AddWithValue("@payment", If(cboPaymentMode.SelectedItem Is Nothing, "Cash", cboPaymentMode.SelectedItem.ToString()))
         cmd.ExecuteNonQuery()
-    End Sub
-
-    Private Sub frmAddCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Guna2HtmlLabel1.Text = "CONTACT NUMBER (optional)"
     End Sub
 End Class

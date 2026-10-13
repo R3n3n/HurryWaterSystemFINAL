@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmStockIn
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmStockIn
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lblCustomers = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,7 +35,6 @@ Partial Class frmStockIn
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSave = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnAutoRef = New Guna.UI2.WinForms.Guna2GradientButton()
-        Me.cboRecentRef = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.SuspendLayout()
         '
         'lblCustomers
@@ -45,7 +44,7 @@ Partial Class frmStockIn
         Me.lblCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblCustomers.Location = New System.Drawing.Point(31, 34)
         Me.lblCustomers.Name = "lblCustomers"
-        Me.lblCustomers.Size = New System.Drawing.Size(180, 54)
+        Me.lblCustomers.Size = New System.Drawing.Size(182, 54)
         Me.lblCustomers.TabIndex = 12
         Me.lblCustomers.Text = "Stock In"
         '
@@ -56,7 +55,7 @@ Partial Class frmStockIn
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(35, 88)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(301, 31)
+        Me.Label1.Size = New System.Drawing.Size(315, 32)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Record newly received stock"
         '
@@ -67,7 +66,7 @@ Partial Class frmStockIn
         Me.Guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(41, 151)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
-        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(60, 34)
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(57, 33)
         Me.Guna2HtmlLabel6.TabIndex = 19
         Me.Guna2HtmlLabel6.Text = "ITEM"
         '
@@ -85,7 +84,7 @@ Partial Class frmStockIn
         Me.cboItem.Items.AddRange(New Object() {"Cash", "Card"})
         Me.cboItem.Location = New System.Drawing.Point(41, 190)
         Me.cboItem.Name = "cboItem"
-        Me.cboItem.Size = New System.Drawing.Size(528, 53)
+        Me.cboItem.Size = New System.Drawing.Size(528, 50)
         Me.cboItem.TabIndex = 18
         '
         'Guna2HtmlLabel3
@@ -95,7 +94,7 @@ Partial Class frmStockIn
         Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(41, 281)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(239, 34)
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(228, 33)
         Me.Guna2HtmlLabel3.TabIndex = 21
         Me.Guna2HtmlLabel3.Text = "QUANTITY RECEIVED"
         '
@@ -112,6 +111,7 @@ Partial Class frmStockIn
         Me.txtQuantity.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtQuantity.Location = New System.Drawing.Point(41, 322)
+        Me.txtQuantity.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtQuantity.Name = "txtQuantity"
         Me.txtQuantity.PlaceholderText = ""
         Me.txtQuantity.SelectedText = ""
@@ -140,7 +140,7 @@ Partial Class frmStockIn
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(41, 408)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(64, 34)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(61, 33)
         Me.Guna2HtmlLabel1.TabIndex = 23
         Me.Guna2HtmlLabel1.Text = "DATE"
         '
@@ -151,7 +151,7 @@ Partial Class frmStockIn
         Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(41, 544)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(345, 34)
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(331, 33)
         Me.Guna2HtmlLabel2.TabIndex = 25
         Me.Guna2HtmlLabel2.Text = "REFERENCE NO. / INVOICE NO."
         '
@@ -168,6 +168,7 @@ Partial Class frmStockIn
         Me.txtReference.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtReference.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtReference.Location = New System.Drawing.Point(41, 585)
+        Me.txtReference.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtReference.Name = "txtReference"
         Me.txtReference.PlaceholderText = "e.g. INV-2026-0001"
         Me.txtReference.SelectedText = ""
@@ -184,7 +185,7 @@ Partial Class frmStockIn
         Me.btnCancel.FillColor = System.Drawing.Color.White
         Me.btnCancel.Font = New System.Drawing.Font("Segoe UI", 13.25!)
         Me.btnCancel.ForeColor = System.Drawing.Color.Black
-        Me.btnCancel.Location = New System.Drawing.Point(206, 750)
+        Me.btnCancel.Location = New System.Drawing.Point(205, 679)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(177, 54)
         Me.btnCancel.TabIndex = 28
@@ -202,7 +203,7 @@ Partial Class frmStockIn
         Me.btnSave.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 13.25!)
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(392, 750)
+        Me.btnSave.Location = New System.Drawing.Point(391, 679)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(177, 54)
         Me.btnSave.TabIndex = 27
@@ -221,34 +222,17 @@ Partial Class frmStockIn
         Me.btnAutoRef.Font = New System.Drawing.Font("Segoe UI", 13.25!)
         Me.btnAutoRef.ForeColor = System.Drawing.Color.White
         Me.btnAutoRef.Location = New System.Drawing.Point(415, 585)
-        Me.btnAutoRef.Size = New System.Drawing.Size(154, 53)
-        Me.btnAutoRef.Text = "Auto-generate"
         Me.btnAutoRef.Name = "btnAutoRef"
+        Me.btnAutoRef.Size = New System.Drawing.Size(154, 53)
         Me.btnAutoRef.TabIndex = 30
-        '
-        'cboRecentRef
-        '
-        Me.cboRecentRef.BackColor = System.Drawing.Color.Transparent
-        Me.cboRecentRef.BorderRadius = 18
-        Me.cboRecentRef.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboRecentRef.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboRecentRef.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboRecentRef.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboRecentRef.Font = New System.Drawing.Font("Segoe UI", 14.75!)
-        Me.cboRecentRef.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cboRecentRef.ItemHeight = 44
-        Me.cboRecentRef.Location = New System.Drawing.Point(41, 648)
-        Me.cboRecentRef.Size = New System.Drawing.Size(528, 53)
-        Me.cboRecentRef.Name = "cboRecentRef"
-        Me.cboRecentRef.TabIndex = 31
+        Me.btnAutoRef.Text = "Auto-generate"
         '
         'frmStockIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(615, 850)
-        Me.Controls.Add(Me.cboRecentRef)
+        Me.ClientSize = New System.Drawing.Size(615, 765)
         Me.Controls.Add(Me.btnAutoRef)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSave)
@@ -283,5 +267,4 @@ Partial Class frmStockIn
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents btnAutoRef As Guna.UI2.WinForms.Guna2GradientButton
-    Friend WithEvents cboRecentRef As Guna.UI2.WinForms.Guna2ComboBox
 End Class

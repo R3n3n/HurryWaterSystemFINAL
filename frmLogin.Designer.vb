@@ -24,6 +24,7 @@ Partial Class frmLogin
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.btnExit = New System.Windows.Forms.Label()
         Me.btnClear = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnLogin = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -34,7 +35,6 @@ Partial Class frmLogin
         Me.lblSalesDelivery = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.btnExit = New System.Windows.Forms.Label()
         Me.Guna2GradientPanel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,6 +58,18 @@ Partial Class frmLogin
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
         Me.Guna2GradientPanel1.Size = New System.Drawing.Size(1920, 1080)
         Me.Guna2GradientPanel1.TabIndex = 0
+        '
+        'btnExit
+        '
+        Me.btnExit.AutoSize = True
+        Me.btnExit.BackColor = System.Drawing.Color.Transparent
+        Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 35.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(173, Byte), Integer))
+        Me.btnExit.Location = New System.Drawing.Point(1828, 30)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(56, 65)
+        Me.btnExit.TabIndex = 73
+        Me.btnExit.Text = "X"
         '
         'btnClear
         '
@@ -104,7 +116,7 @@ Partial Class frmLogin
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(212, Byte), Integer))
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(1004, 625)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(166, 50)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(163, 50)
         Me.Guna2HtmlLabel1.TabIndex = 70
         Me.Guna2HtmlLabel1.Text = "Password"
         '
@@ -119,7 +131,7 @@ Partial Class frmLogin
         Me.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 14.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(250, Byte), Integer))
         Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPassword.Location = New System.Drawing.Point(1004, 686)
@@ -139,7 +151,7 @@ Partial Class frmLogin
         Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(212, Byte), Integer))
         Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(1004, 477)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(173, 50)
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(171, 50)
         Me.Guna2HtmlLabel3.TabIndex = 68
         Me.Guna2HtmlLabel3.Text = "Username"
         '
@@ -154,7 +166,7 @@ Partial Class frmLogin
         Me.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 14.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(250, Byte), Integer))
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsername.Location = New System.Drawing.Point(1004, 537)
@@ -173,7 +185,7 @@ Partial Class frmLogin
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(852, 302)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(970, 105)
+        Me.Label1.Size = New System.Drawing.Size(977, 105)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "MANAGEMENT SYSTEM"
         '
@@ -185,7 +197,7 @@ Partial Class frmLogin
         Me.lblSalesDelivery.ForeColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.lblSalesDelivery.Location = New System.Drawing.Point(1007, 179)
         Me.lblSalesDelivery.Name = "lblSalesDelivery"
-        Me.lblSalesDelivery.Size = New System.Drawing.Size(634, 105)
+        Me.lblSalesDelivery.Size = New System.Drawing.Size(637, 105)
         Me.lblSalesDelivery.TabIndex = 19
         Me.lblSalesDelivery.Text = "HURRY WATER"
         '
@@ -203,18 +215,6 @@ Partial Class frmLogin
         'Guna2Elipse1
         '
         Me.Guna2Elipse1.TargetControl = Me
-        '
-        'btnExit
-        '
-        Me.btnExit.AutoSize = True
-        Me.btnExit.BackColor = System.Drawing.Color.Transparent
-        Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 35.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(62, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.btnExit.Location = New System.Drawing.Point(1828, 30)
-        Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(58, 67)
-        Me.btnExit.TabIndex = 73
-        Me.btnExit.Text = "X"
         '
         'frmLogin
         '

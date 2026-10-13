@@ -42,8 +42,6 @@ Public Class frmStockIn
 
     ' The last few references used, so a delivery that comes with several items can reuse its invoice number
     Private Sub LoadRecentReferences()
-        cboRecentRef.Items.Clear()
-        cboRecentRef.Items.Add("Pick a previous reference...")
 
         Try
             connection()
@@ -52,9 +50,6 @@ Public Class frmStockIn
                   "GROUP BY referenceNote ORDER BY lastUsed DESC, referenceNote DESC LIMIT 20"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader()
-            While dr.Read()
-                cboRecentRef.Items.Add(dr("referenceNote").ToString())
-            End While
             dr.Close()
         Catch ex As Exception
             MsgBox("Error loading previous references: " & ex.Message, MsgBoxStyle.Critical)
@@ -62,14 +57,8 @@ Public Class frmStockIn
             If cn.State = ConnectionState.Open Then cn.Close()
         End Try
 
-        cboRecentRef.SelectedIndex = 0
     End Sub
 
-    Private Sub cboRecentRef_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboRecentRef.SelectedIndexChanged
-        If cboRecentRef.SelectedIndex > 0 Then txtReference.Text = cboRecentRef.Text
-    End Sub
-
-    ' SI-20261011-001, SI-20261011-002, ... one running number per day
     Private Sub btnAutoRef_Click(sender As Object, e As EventArgs) Handles btnAutoRef.Click
         Dim prefix As String = "SI-" & dtpDate.Value.Date.ToString("yyyyMMdd") & "-"
         Dim n As Integer = 1
