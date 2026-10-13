@@ -46,7 +46,7 @@ Partial Class frmAddBorrowRecord
         Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(40, 281)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(181, 34)
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(175, 33)
         Me.Guna2HtmlLabel3.TabIndex = 54
         Me.Guna2HtmlLabel3.Text = "DISPENSER REF."
         '
@@ -63,6 +63,7 @@ Partial Class frmAddBorrowRecord
         Me.txtDispenserRef.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDispenserRef.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtDispenserRef.Location = New System.Drawing.Point(40, 323)
+        Me.txtDispenserRef.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtDispenserRef.Name = "txtDispenserRef"
         Me.txtDispenserRef.PlaceholderText = "e.g. DSP-015"
         Me.txtDispenserRef.SelectedText = ""
@@ -76,7 +77,7 @@ Partial Class frmAddBorrowRecord
         Me.Guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(40, 149)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
-        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(130, 34)
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(126, 33)
         Me.Guna2HtmlLabel6.TabIndex = 52
         Me.Guna2HtmlLabel6.Text = "CUSTOMER"
         '
@@ -94,7 +95,7 @@ Partial Class frmAddBorrowRecord
         Me.cboCustomer.Items.AddRange(New Object() {"Cash", "Card"})
         Me.cboCustomer.Location = New System.Drawing.Point(40, 192)
         Me.cboCustomer.Name = "cboCustomer"
-        Me.cboCustomer.Size = New System.Drawing.Size(537, 53)
+        Me.cboCustomer.Size = New System.Drawing.Size(537, 50)
         Me.cboCustomer.TabIndex = 51
         '
         'btnCancel
@@ -129,7 +130,7 @@ Partial Class frmAddBorrowRecord
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(177, 54)
         Me.btnSave.TabIndex = 47
-        Me.btnSave.Text = "Save Expense"
+        Me.btnSave.Text = "Save Borrow"
         '
         'Label1
         '
@@ -138,7 +139,7 @@ Partial Class frmAddBorrowRecord
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(34, 83)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(426, 31)
+        Me.Label1.Size = New System.Drawing.Size(451, 32)
         Me.Label1.TabIndex = 46
         Me.Label1.Text = "Log a dispenser being lent to a customer"
         '
@@ -149,7 +150,7 @@ Partial Class frmAddBorrowRecord
         Me.lblCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblCustomers.Location = New System.Drawing.Point(29, 29)
         Me.lblCustomers.Name = "lblCustomers"
-        Me.lblCustomers.Size = New System.Drawing.Size(417, 54)
+        Me.lblCustomers.Size = New System.Drawing.Size(416, 54)
         Me.lblCustomers.TabIndex = 45
         Me.lblCustomers.Text = "New Borrow Record"
         '
@@ -160,7 +161,7 @@ Partial Class frmAddBorrowRecord
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(40, 423)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(203, 34)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(198, 33)
         Me.Guna2HtmlLabel1.TabIndex = 56
         Me.Guna2HtmlLabel1.Text = "DATE BORROWED"
         '
@@ -186,7 +187,7 @@ Partial Class frmAddBorrowRecord
         Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(332, 423)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(217, 34)
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(208, 33)
         Me.Guna2HtmlLabel2.TabIndex = 58
         Me.Guna2HtmlLabel2.Text = "EXPECTED RETURN"
         '

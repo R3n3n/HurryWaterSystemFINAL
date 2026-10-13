@@ -7,9 +7,9 @@ Public Class frmEditExpense
 
     Private Sub frmEditExpense_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cboCategory.Items.Clear()
-        cboCategory.Items.AddRange({"Gas", "Salary", "Utilities", "Supplies", "Other"})
+        cboCategory.Items.AddRange({"Salary", "Utilities", "Supplies", "Other"})
 
-        dtpExpenseDate.MaxDate = Date.Today   ' no expenses dated in the future
+        dtpExpenseDate.MaxDate = Date.Today
 
         If ExpenseID > 0 Then
             LoadExpenseData()
@@ -20,7 +20,6 @@ Public Class frmEditExpense
     End Sub
 
     Private Sub cboCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCategory.SelectedIndexChanged
-        ' "Other" is too vague on its own, so the description becomes required
         Dim isOther As Boolean = (cboCategory.Text = "Other")
         Guna2HtmlLabel2.Text = If(isOther, "DESCRIPTION (required)", "DESCRIPTION")
         txtDescription.PlaceholderText = If(isOther, "What is this expense for?", "")
@@ -36,7 +35,6 @@ Public Class frmEditExpense
             dr = cmd.ExecuteReader()
             If dr.Read() Then
                 Dim savedDate As Date = Convert.ToDateTime(dr("expenseDate")).Date
-                ' an older record may already carry a future date; let it load so it can be corrected
                 If savedDate > dtpExpenseDate.MaxDate Then dtpExpenseDate.MaxDate = savedDate
                 dtpExpenseDate.Value = savedDate
                 cboCategory.SelectedItem = dr("category").ToString()

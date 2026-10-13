@@ -36,7 +36,7 @@ Partial Class frmDispenserBorrowing
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(38, 40)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(714, 106)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(718, 94)
         Me.Guna2HtmlLabel1.TabIndex = 0
         Me.Guna2HtmlLabel1.Text = "Dispenser Borrowing"
         '
@@ -60,7 +60,9 @@ Partial Class frmDispenserBorrowing
         '
         'btnMarkReturned
         '
+        Me.btnMarkReturned.BorderColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.btnMarkReturned.BorderRadius = 20
+        Me.btnMarkReturned.BorderThickness = 1
         Me.btnMarkReturned.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnMarkReturned.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnMarkReturned.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -94,7 +96,7 @@ Partial Class frmDispenserBorrowing
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1535, 1082)
+        Me.ClientSize = New System.Drawing.Size(1535, 1061)
         Me.Controls.Add(Me.lsvBorrowing)
         Me.Controls.Add(Me.btnMarkReturned)
         Me.Controls.Add(Me.btnAddBorrow)

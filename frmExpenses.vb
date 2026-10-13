@@ -47,7 +47,7 @@ Public Class frmExpenses
                 grandTotal += total
 
                 Select Case category
-                    Case "Gas" : lblGasTotal.Text = "₱" & total.ToString("N2")
+                    Case "Utilities" : lblGasTotal.Text = "₱" & total.ToString("N2")
                     Case "Salary" : lblSalaryTotal.Text = "₱" & total.ToString("N2")
                     Case "Supplies" : lblSuppliesTotal.Text = "₱" & total.ToString("N2")
                 End Select

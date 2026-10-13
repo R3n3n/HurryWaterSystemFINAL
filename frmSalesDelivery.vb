@@ -20,6 +20,7 @@ Public Class frmSalesDelivery
 
         btnUpdateStatus.Enabled = False
         btnDeleteOrder.Enabled = False
+        btnDeleteOrder.Visible = (CurrentUserRole = "Owner")
 
         Label1.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular)
 
