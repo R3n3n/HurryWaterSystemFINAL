@@ -3,9 +3,11 @@
 Public Class frmProductionHistory
 
     Private isLoading As Boolean = True
+    Private lastFrom As Date      ' last valid values, so a bad pick can be undone
+    Private lastTo As Date
 
     Private Sub frmProductionHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lsvLogs.View = View.Details                       ' <-- your ListView name
+        lsvLogs.View = View.Details
         lsvLogs.FullRowSelect = True
         lsvLogs.GridLines = True
         lsvLogs.Columns.Clear()
@@ -21,18 +23,22 @@ Public Class frmProductionHistory
         cboFilterTank.Items.AddRange({"All tanks", "Tank-1", "Tank-2"})
         cboFilterTank.SelectedIndex = 0
 
+        ' production can't be logged in the future, so neither date can go past today
+        dtpFrom.MaxDate = Date.Today
+        dtpTo.MaxDate = Date.Today
+
         dtpFrom.Value = New Date(Date.Today.Year, Date.Today.Month, 1)   ' first day of this month
         dtpTo.Value = Date.Today
+
+        lastFrom = dtpFrom.Value.Date
+        lastTo = dtpTo.Value.Date
 
         isLoading = False
         LoadLogs()
     End Sub
 
     Private Sub LoadLogs()
-        If dtpFrom.Value.Date > dtpTo.Value.Date Then
-            MsgBox("'From' cannot be later than 'To'.", MsgBoxStyle.Exclamation)
-            Return
-        End If
+        If dtpFrom.Value.Date > dtpTo.Value.Date Then Return   ' safety net; the pickers undo bad picks themselves
 
         lsvLogs.Items.Clear()
         Dim totLiters As Decimal = 0D, totGallons As Decimal = 0D
@@ -41,10 +47,10 @@ Public Class frmProductionHistory
         sql = "SELECT p.logDate, p.tankId, p.litersProduced, p.gallonEquivalent, " &
               "       p.bottle350mlEquivalent, p.bottle500mlEquivalent, u.username " &
               "FROM tblproductionlog p " &
-              "LEFT JOIN tblusers u ON p.recordedBy = u.userId " &       ' <-- your users table (or remove the join)
+              "LEFT JOIN tblusers u ON p.recordedBy = u.userId " &
               "WHERE p.logDate BETWEEN @from AND @to"
         If cboFilterTank.SelectedIndex > 0 Then sql &= " AND p.tankId = @tank"
-        sql &= " ORDER BY p.logDate DESC, p.logId DESC"                  ' <-- logId = the table's ID column
+        sql &= " ORDER BY p.logDate DESC, p.logId DESC"
 
         Try
             connection()
@@ -84,11 +90,33 @@ Public Class frmProductionHistory
     End Sub
 
     Private Sub dtpFrom_ValueChanged(sender As Object, e As EventArgs) Handles dtpFrom.ValueChanged
-        If Not isLoading Then LoadLogs()
+        If isLoading Then Return
+
+        If dtpFrom.Value.Date > dtpTo.Value.Date Then
+            MsgBox("'From' can't be later than 'To'.", MsgBoxStyle.Exclamation, "Invalid dates")
+            isLoading = True                 ' undo the pick without triggering another reload
+            dtpFrom.Value = lastFrom
+            isLoading = False
+            Return
+        End If
+
+        lastFrom = dtpFrom.Value.Date
+        LoadLogs()
     End Sub
 
     Private Sub dtpTo_ValueChanged(sender As Object, e As EventArgs) Handles dtpTo.ValueChanged
-        If Not isLoading Then LoadLogs()
+        If isLoading Then Return
+
+        If dtpTo.Value.Date < dtpFrom.Value.Date Then
+            MsgBox("'To' can't be earlier than 'From'.", MsgBoxStyle.Exclamation, "Invalid dates")
+            isLoading = True
+            dtpTo.Value = lastTo
+            isLoading = False
+            Return
+        End If
+
+        lastTo = dtpTo.Value.Date
+        LoadLogs()
     End Sub
 
     Private Sub cboFilterTank_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFilterTank.SelectedIndexChanged

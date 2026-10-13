@@ -25,7 +25,6 @@ Partial Class frmAddSalesOrder
         Me.components = New System.ComponentModel.Container()
         Me.lblCustomers = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.cboCustomer = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.cboPickupStatus = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.dtpOrderDate = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -58,6 +57,7 @@ Partial Class frmAddSalesOrder
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.errorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txtCustomer = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.nudUnitPrice3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudUnitPrice2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,7 +76,7 @@ Partial Class frmAddSalesOrder
         Me.lblCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblCustomers.Location = New System.Drawing.Point(18, 26)
         Me.lblCustomers.Name = "lblCustomers"
-        Me.lblCustomers.Size = New System.Drawing.Size(515, 54)
+        Me.lblCustomers.Size = New System.Drawing.Size(516, 54)
         Me.lblCustomers.TabIndex = 12
         Me.lblCustomers.Text = "Add New Sales / Delivery"
         '
@@ -87,26 +87,9 @@ Partial Class frmAddSalesOrder
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(22, 80)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(410, 31)
+        Me.Label1.Size = New System.Drawing.Size(428, 32)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Record a pickup or delivery transaction"
-        '
-        'cboCustomer
-        '
-        Me.cboCustomer.BackColor = System.Drawing.Color.Transparent
-        Me.cboCustomer.BorderRadius = 18
-        Me.cboCustomer.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboCustomer.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboCustomer.Font = New System.Drawing.Font("Segoe UI", 14.75!)
-        Me.cboCustomer.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cboCustomer.ItemHeight = 44
-        Me.cboCustomer.Items.AddRange(New Object() {"Household", "Company"})
-        Me.cboCustomer.Location = New System.Drawing.Point(28, 173)
-        Me.cboCustomer.Name = "cboCustomer"
-        Me.cboCustomer.Size = New System.Drawing.Size(318, 53)
-        Me.cboCustomer.TabIndex = 14
         '
         'cboPickupStatus
         '
@@ -122,7 +105,7 @@ Partial Class frmAddSalesOrder
         Me.cboPickupStatus.Items.AddRange(New Object() {"Pending", "Picked-up", "Delivered"})
         Me.cboPickupStatus.Location = New System.Drawing.Point(585, 173)
         Me.cboPickupStatus.Name = "cboPickupStatus"
-        Me.cboPickupStatus.Size = New System.Drawing.Size(195, 53)
+        Me.cboPickupStatus.Size = New System.Drawing.Size(195, 50)
         Me.cboPickupStatus.TabIndex = 15
         '
         'dtpOrderDate
@@ -147,7 +130,7 @@ Partial Class frmAddSalesOrder
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(22, 138)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(114, 31)
+        Me.Label2.Size = New System.Drawing.Size(117, 32)
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Customer"
         '
@@ -158,7 +141,7 @@ Partial Class frmAddSalesOrder
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(363, 138)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(127, 31)
+        Me.Label3.Size = New System.Drawing.Size(132, 32)
         Me.Label3.TabIndex = 18
         Me.Label3.Text = "Order Date"
         '
@@ -169,7 +152,7 @@ Partial Class frmAddSalesOrder
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(580, 138)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(149, 31)
+        Me.Label4.Size = New System.Drawing.Size(155, 32)
         Me.Label4.TabIndex = 19
         Me.Label4.Text = "Pickup Status"
         '
@@ -206,7 +189,7 @@ Partial Class frmAddSalesOrder
         Me.lblLineTotal3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblLineTotal3.Location = New System.Drawing.Point(578, 202)
         Me.lblLineTotal3.Name = "lblLineTotal3"
-        Me.lblLineTotal3.Size = New System.Drawing.Size(41, 31)
+        Me.lblLineTotal3.Size = New System.Drawing.Size(41, 32)
         Me.lblLineTotal3.TabIndex = 34
         Me.lblLineTotal3.Text = "₱0"
         '
@@ -218,7 +201,7 @@ Partial Class frmAddSalesOrder
         Me.lblLineTotal2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblLineTotal2.Location = New System.Drawing.Point(578, 139)
         Me.lblLineTotal2.Name = "lblLineTotal2"
-        Me.lblLineTotal2.Size = New System.Drawing.Size(41, 31)
+        Me.lblLineTotal2.Size = New System.Drawing.Size(41, 32)
         Me.lblLineTotal2.TabIndex = 33
         Me.lblLineTotal2.Text = "₱0"
         '
@@ -286,7 +269,7 @@ Partial Class frmAddSalesOrder
         Me.lblLineTotal1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblLineTotal1.Location = New System.Drawing.Point(578, 76)
         Me.lblLineTotal1.Name = "lblLineTotal1"
-        Me.lblLineTotal1.Size = New System.Drawing.Size(41, 31)
+        Me.lblLineTotal1.Size = New System.Drawing.Size(41, 32)
         Me.lblLineTotal1.TabIndex = 21
         Me.lblLineTotal1.Text = "₱0"
         '
@@ -298,7 +281,7 @@ Partial Class frmAddSalesOrder
         Me.Label8.ForeColor = System.Drawing.Color.DarkGray
         Me.Label8.Location = New System.Drawing.Point(578, 20)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(139, 31)
+        Me.Label8.Size = New System.Drawing.Size(144, 32)
         Me.Label8.TabIndex = 28
         Me.Label8.Text = "LINE TOTAL"
         '
@@ -324,7 +307,7 @@ Partial Class frmAddSalesOrder
         Me.Label7.ForeColor = System.Drawing.Color.DarkGray
         Me.Label7.Location = New System.Drawing.Point(411, 20)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(142, 31)
+        Me.Label7.Size = New System.Drawing.Size(146, 32)
         Me.Label7.TabIndex = 26
         Me.Label7.Text = "UNIT PRICE"
         '
@@ -350,7 +333,7 @@ Partial Class frmAddSalesOrder
         Me.Label6.ForeColor = System.Drawing.Color.DarkGray
         Me.Label6.Location = New System.Drawing.Point(303, 20)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(59, 31)
+        Me.Label6.Size = New System.Drawing.Size(60, 32)
         Me.Label6.TabIndex = 24
         Me.Label6.Text = "QTY"
         '
@@ -369,7 +352,7 @@ Partial Class frmAddSalesOrder
         Me.cboProduct3.Items.AddRange(New Object() {"Household", "Company"})
         Me.cboProduct3.Location = New System.Drawing.Point(26, 192)
         Me.cboProduct3.Name = "cboProduct3"
-        Me.cboProduct3.Size = New System.Drawing.Size(230, 53)
+        Me.cboProduct3.Size = New System.Drawing.Size(230, 50)
         Me.cboProduct3.TabIndex = 23
         '
         'cboProduct2
@@ -387,7 +370,7 @@ Partial Class frmAddSalesOrder
         Me.cboProduct2.Items.AddRange(New Object() {"Household", "Company"})
         Me.cboProduct2.Location = New System.Drawing.Point(26, 130)
         Me.cboProduct2.Name = "cboProduct2"
-        Me.cboProduct2.Size = New System.Drawing.Size(230, 53)
+        Me.cboProduct2.Size = New System.Drawing.Size(230, 50)
         Me.cboProduct2.TabIndex = 22
         '
         'cboProduct1
@@ -405,7 +388,7 @@ Partial Class frmAddSalesOrder
         Me.cboProduct1.Items.AddRange(New Object() {"Household", "Company"})
         Me.cboProduct1.Location = New System.Drawing.Point(26, 69)
         Me.cboProduct1.Name = "cboProduct1"
-        Me.cboProduct1.Size = New System.Drawing.Size(230, 53)
+        Me.cboProduct1.Size = New System.Drawing.Size(230, 50)
         Me.cboProduct1.TabIndex = 21
         '
         'Label5
@@ -416,7 +399,7 @@ Partial Class frmAddSalesOrder
         Me.Label5.ForeColor = System.Drawing.Color.DarkGray
         Me.Label5.Location = New System.Drawing.Point(59, 20)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(124, 31)
+        Me.Label5.Size = New System.Drawing.Size(127, 32)
         Me.Label5.TabIndex = 21
         Me.Label5.Text = "PRODUCT"
         '
@@ -427,7 +410,7 @@ Partial Class frmAddSalesOrder
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label12.Location = New System.Drawing.Point(22, 572)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(167, 31)
+        Me.Label12.Size = New System.Drawing.Size(176, 32)
         Me.Label12.TabIndex = 22
         Me.Label12.Text = "Payment Mode"
         '
@@ -445,7 +428,7 @@ Partial Class frmAddSalesOrder
         Me.cboPaymentMode.Items.AddRange(New Object() {"Cash", "Card"})
         Me.cboPaymentMode.Location = New System.Drawing.Point(28, 607)
         Me.cboPaymentMode.Name = "cboPaymentMode"
-        Me.cboPaymentMode.Size = New System.Drawing.Size(195, 53)
+        Me.cboPaymentMode.Size = New System.Drawing.Size(195, 50)
         Me.cboPaymentMode.TabIndex = 21
         '
         'Label13
@@ -455,7 +438,7 @@ Partial Class frmAddSalesOrder
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label13.Location = New System.Drawing.Point(247, 572)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(170, 31)
+        Me.Label13.Size = New System.Drawing.Size(177, 32)
         Me.Label13.TabIndex = 24
         Me.Label13.Text = "Payment Status"
         '
@@ -473,7 +456,7 @@ Partial Class frmAddSalesOrder
         Me.cboPaymentStatus.Items.AddRange(New Object() {"Paid", "Unpaid"})
         Me.cboPaymentStatus.Location = New System.Drawing.Point(253, 607)
         Me.cboPaymentStatus.Name = "cboPaymentStatus"
-        Me.cboPaymentStatus.Size = New System.Drawing.Size(195, 53)
+        Me.cboPaymentStatus.Size = New System.Drawing.Size(195, 50)
         Me.cboPaymentStatus.TabIndex = 23
         '
         'btnCancel
@@ -529,7 +512,7 @@ Partial Class frmAddSalesOrder
         Me.lblTotal.ForeColor = System.Drawing.Color.White
         Me.lblTotal.Location = New System.Drawing.Point(199, 54)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(41, 31)
+        Me.lblTotal.Size = New System.Drawing.Size(41, 32)
         Me.lblTotal.TabIndex = 36
         Me.lblTotal.Text = "₱0"
         '
@@ -541,7 +524,7 @@ Partial Class frmAddSalesOrder
         Me.Label14.ForeColor = System.Drawing.Color.White
         Me.Label14.Location = New System.Drawing.Point(199, 10)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(78, 31)
+        Me.Label14.Size = New System.Drawing.Size(80, 32)
         Me.Label14.TabIndex = 35
         Me.Label14.Text = "TOTAL"
         '
@@ -549,12 +532,33 @@ Partial Class frmAddSalesOrder
         '
         Me.errorProvider1.ContainerControl = Me
         '
+        'txtCustomer
+        '
+        Me.txtCustomer.BorderRadius = 18
+        Me.txtCustomer.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCustomer.DefaultText = ""
+        Me.txtCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCustomer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCustomer.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCustomer.Location = New System.Drawing.Point(27, 175)
+        Me.txtCustomer.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtCustomer.Name = "txtCustomer"
+        Me.txtCustomer.PlaceholderText = ""
+        Me.txtCustomer.SelectedText = ""
+        Me.txtCustomer.Size = New System.Drawing.Size(315, 53)
+        Me.txtCustomer.TabIndex = 68
+        '
         'frmAddSalesOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(817, 790)
+        Me.Controls.Add(Me.txtCustomer)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSave)
@@ -568,7 +572,6 @@ Partial Class frmAddSalesOrder
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.dtpOrderDate)
         Me.Controls.Add(Me.cboPickupStatus)
-        Me.Controls.Add(Me.cboCustomer)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblCustomers)
         Me.Name = "frmAddSalesOrder"
@@ -592,7 +595,6 @@ Partial Class frmAddSalesOrder
 
     Friend WithEvents lblCustomers As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents cboCustomer As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents cboPickupStatus As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents dtpOrderDate As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Label2 As Label
@@ -625,4 +627,5 @@ Partial Class frmAddSalesOrder
     Friend WithEvents lblTotal As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents errorProvider1 As ErrorProvider
+    Friend WithEvents txtCustomer As Guna.UI2.WinForms.Guna2TextBox
 End Class

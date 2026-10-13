@@ -26,7 +26,6 @@ Partial Class frmAddBorrowRecord
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txtDispenserRef = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.cboCustomer = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSave = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -36,6 +35,7 @@ Partial Class frmAddBorrowRecord
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.dtpExpectedReturn = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.errorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txtCustomer = New Guna.UI2.WinForms.Guna2TextBox()
         CType(Me.errorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -80,23 +80,6 @@ Partial Class frmAddBorrowRecord
         Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(126, 33)
         Me.Guna2HtmlLabel6.TabIndex = 52
         Me.Guna2HtmlLabel6.Text = "CUSTOMER"
-        '
-        'cboCustomer
-        '
-        Me.cboCustomer.BackColor = System.Drawing.Color.Transparent
-        Me.cboCustomer.BorderRadius = 18
-        Me.cboCustomer.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboCustomer.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboCustomer.Font = New System.Drawing.Font("Segoe UI", 14.75!)
-        Me.cboCustomer.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cboCustomer.ItemHeight = 44
-        Me.cboCustomer.Items.AddRange(New Object() {"Cash", "Card"})
-        Me.cboCustomer.Location = New System.Drawing.Point(40, 192)
-        Me.cboCustomer.Name = "cboCustomer"
-        Me.cboCustomer.Size = New System.Drawing.Size(537, 50)
-        Me.cboCustomer.TabIndex = 51
         '
         'btnCancel
         '
@@ -210,12 +193,33 @@ Partial Class frmAddBorrowRecord
         '
         Me.errorProvider1.ContainerControl = Me
         '
+        'txtCustomer
+        '
+        Me.txtCustomer.BorderRadius = 18
+        Me.txtCustomer.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCustomer.DefaultText = ""
+        Me.txtCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCustomer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCustomer.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCustomer.Location = New System.Drawing.Point(40, 190)
+        Me.txtCustomer.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtCustomer.Name = "txtCustomer"
+        Me.txtCustomer.PlaceholderText = ""
+        Me.txtCustomer.SelectedText = ""
+        Me.txtCustomer.Size = New System.Drawing.Size(537, 53)
+        Me.txtCustomer.TabIndex = 59
+        '
         'frmAddBorrowRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(615, 669)
+        Me.Controls.Add(Me.txtCustomer)
         Me.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Controls.Add(Me.dtpExpectedReturn)
         Me.Controls.Add(Me.Guna2HtmlLabel1)
@@ -223,7 +227,6 @@ Partial Class frmAddBorrowRecord
         Me.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Controls.Add(Me.txtDispenserRef)
         Me.Controls.Add(Me.Guna2HtmlLabel6)
-        Me.Controls.Add(Me.cboCustomer)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.Label1)
@@ -240,7 +243,6 @@ Partial Class frmAddBorrowRecord
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents txtDispenserRef As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents cboCustomer As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents Label1 As Label
@@ -250,4 +252,5 @@ Partial Class frmAddBorrowRecord
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents dtpExpectedReturn As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents errorProvider1 As ErrorProvider
+    Friend WithEvents txtCustomer As Guna.UI2.WinForms.Guna2TextBox
 End Class

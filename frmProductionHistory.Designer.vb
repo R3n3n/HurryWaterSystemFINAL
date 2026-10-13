@@ -57,7 +57,7 @@ Partial Class frmProductionHistory
         Me.lblSalesDelivery.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblSalesDelivery.Location = New System.Drawing.Point(18, 50)
         Me.lblSalesDelivery.Name = "lblSalesDelivery"
-        Me.lblSalesDelivery.Size = New System.Drawing.Size(774, 118)
+        Me.lblSalesDelivery.Size = New System.Drawing.Size(779, 104)
         Me.lblSalesDelivery.TabIndex = 15
         Me.lblSalesDelivery.Text = "Production History"
         '
@@ -68,7 +68,7 @@ Partial Class frmProductionHistory
         Me.lblLogCount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblLogCount.Location = New System.Drawing.Point(32, 168)
         Me.lblLogCount.Name = "lblLogCount"
-        Me.lblLogCount.Size = New System.Drawing.Size(426, 53)
+        Me.lblLogCount.Size = New System.Drawing.Size(425, 47)
         Me.lblLogCount.TabIndex = 17
         Me.lblLogCount.Text = "Enter today's tank output "
         '
@@ -79,7 +79,7 @@ Partial Class frmProductionHistory
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(34, 269)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(98, 46)
+        Me.Label3.Size = New System.Drawing.Size(103, 41)
         Me.Label3.TabIndex = 20
         Me.Label3.Text = "FROM"
         '
@@ -88,7 +88,7 @@ Partial Class frmProductionHistory
         Me.dtpFrom.BorderRadius = 18
         Me.dtpFrom.Checked = True
         Me.dtpFrom.FillColor = System.Drawing.Color.White
-        Me.dtpFrom.Font = New System.Drawing.Font("Segoe UI", 13.25!)
+        Me.dtpFrom.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.dtpFrom.Location = New System.Drawing.Point(41, 320)
         Me.dtpFrom.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
@@ -105,7 +105,7 @@ Partial Class frmProductionHistory
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(550, 269)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 46)
+        Me.Label2.Size = New System.Drawing.Size(57, 41)
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "TO"
         '
@@ -114,7 +114,7 @@ Partial Class frmProductionHistory
         Me.dtpTo.BorderRadius = 18
         Me.dtpTo.Checked = True
         Me.dtpTo.FillColor = System.Drawing.Color.White
-        Me.dtpTo.Font = New System.Drawing.Font("Segoe UI", 13.25!)
+        Me.dtpTo.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.dtpTo.Location = New System.Drawing.Point(558, 320)
         Me.dtpTo.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
@@ -137,7 +137,7 @@ Partial Class frmProductionHistory
         Me.cboFilterTank.ItemHeight = 50
         Me.cboFilterTank.Location = New System.Drawing.Point(1071, 320)
         Me.cboFilterTank.Name = "cboFilterTank"
-        Me.cboFilterTank.Size = New System.Drawing.Size(427, 60)
+        Me.cboFilterTank.Size = New System.Drawing.Size(427, 56)
         Me.cboFilterTank.TabIndex = 25
         '
         'Guna2HtmlLabel1
@@ -147,7 +147,7 @@ Partial Class frmProductionHistory
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(1071, 265)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(79, 50)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(78, 42)
         Me.Guna2HtmlLabel1.TabIndex = 24
         Me.Guna2HtmlLabel1.Text = "TANK"
         '
@@ -170,7 +170,7 @@ Partial Class frmProductionHistory
         Me.lblTotalLiters.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblTotalLiters.Location = New System.Drawing.Point(20, 81)
         Me.lblTotalLiters.Name = "lblTotalLiters"
-        Me.lblTotalLiters.Size = New System.Drawing.Size(48, 61)
+        Me.lblTotalLiters.Size = New System.Drawing.Size(47, 54)
         Me.lblTotalLiters.TabIndex = 36
         Me.lblTotalLiters.Text = "0"
         '
@@ -182,7 +182,7 @@ Partial Class frmProductionHistory
         Me.Label4.ForeColor = System.Drawing.Color.Gray
         Me.Label4.Location = New System.Drawing.Point(25, 28)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(161, 35)
+        Me.Label4.Size = New System.Drawing.Size(168, 32)
         Me.Label4.TabIndex = 24
         Me.Label4.Text = "TOTAL LITERS"
         '
@@ -205,7 +205,7 @@ Partial Class frmProductionHistory
         Me.lblTotalGallons.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblTotalGallons.Location = New System.Drawing.Point(20, 81)
         Me.lblTotalGallons.Name = "lblTotalGallons"
-        Me.lblTotalGallons.Size = New System.Drawing.Size(48, 61)
+        Me.lblTotalGallons.Size = New System.Drawing.Size(47, 54)
         Me.lblTotalGallons.TabIndex = 36
         Me.lblTotalGallons.Text = "0"
         '
@@ -217,7 +217,7 @@ Partial Class frmProductionHistory
         Me.Label6.ForeColor = System.Drawing.Color.Gray
         Me.Label6.Location = New System.Drawing.Point(25, 28)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(120, 35)
+        Me.Label6.Size = New System.Drawing.Size(121, 32)
         Me.Label6.TabIndex = 24
         Me.Label6.Text = "GALLONS"
         '
@@ -240,7 +240,7 @@ Partial Class frmProductionHistory
         Me.lblTotal350.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblTotal350.Location = New System.Drawing.Point(20, 81)
         Me.lblTotal350.Name = "lblTotal350"
-        Me.lblTotal350.Size = New System.Drawing.Size(48, 61)
+        Me.lblTotal350.Size = New System.Drawing.Size(47, 54)
         Me.lblTotal350.TabIndex = 36
         Me.lblTotal350.Text = "0"
         '
@@ -252,7 +252,7 @@ Partial Class frmProductionHistory
         Me.Label8.ForeColor = System.Drawing.Color.Gray
         Me.Label8.Location = New System.Drawing.Point(25, 28)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(189, 35)
+        Me.Label8.Size = New System.Drawing.Size(196, 32)
         Me.Label8.TabIndex = 24
         Me.Label8.Text = "350ML BOTTLES"
         '
@@ -275,7 +275,7 @@ Partial Class frmProductionHistory
         Me.lblTotal500.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblTotal500.Location = New System.Drawing.Point(20, 81)
         Me.lblTotal500.Name = "lblTotal500"
-        Me.lblTotal500.Size = New System.Drawing.Size(48, 61)
+        Me.lblTotal500.Size = New System.Drawing.Size(47, 54)
         Me.lblTotal500.TabIndex = 36
         Me.lblTotal500.Text = "0"
         '
@@ -287,7 +287,7 @@ Partial Class frmProductionHistory
         Me.Label10.ForeColor = System.Drawing.Color.Gray
         Me.Label10.Location = New System.Drawing.Point(25, 28)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(189, 35)
+        Me.Label10.Size = New System.Drawing.Size(196, 32)
         Me.Label10.TabIndex = 24
         Me.Label10.Text = "500ML BOTTLES"
         '
@@ -311,7 +311,7 @@ Partial Class frmProductionHistory
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1535, 1082)
+        Me.ClientSize = New System.Drawing.Size(1535, 1061)
         Me.Controls.Add(Me.lsvLogs)
         Me.Controls.Add(Me.Guna2Panel4)
         Me.Controls.Add(Me.Guna2Panel3)
