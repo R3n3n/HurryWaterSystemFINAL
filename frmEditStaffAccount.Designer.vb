@@ -46,7 +46,7 @@ Partial Class frmEditStaffAccount
         Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(326, 281)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(135, 34)
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(131, 33)
         Me.Guna2HtmlLabel2.TabIndex = 82
         Me.Guna2HtmlLabel2.Text = "PASSWORD"
         '
@@ -63,6 +63,7 @@ Partial Class frmEditStaffAccount
         Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPassword.Location = New System.Drawing.Point(326, 323)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PlaceholderText = ""
         Me.txtPassword.SelectedText = ""
@@ -76,7 +77,7 @@ Partial Class frmEditStaffAccount
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(44, 281)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(133, 34)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(128, 33)
         Me.Guna2HtmlLabel1.TabIndex = 80
         Me.Guna2HtmlLabel1.Text = "USERNAME"
         '
@@ -93,6 +94,7 @@ Partial Class frmEditStaffAccount
         Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsername.Location = New System.Drawing.Point(44, 323)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PlaceholderText = ""
         Me.txtUsername.SelectedText = ""
@@ -106,7 +108,7 @@ Partial Class frmEditStaffAccount
         Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(41, 164)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(133, 34)
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(130, 33)
         Me.Guna2HtmlLabel3.TabIndex = 78
         Me.Guna2HtmlLabel3.Text = "FULL NAME"
         '
@@ -123,6 +125,7 @@ Partial Class frmEditStaffAccount
         Me.txtFullName.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFullName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtFullName.Location = New System.Drawing.Point(41, 206)
+        Me.txtFullName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtFullName.Name = "txtFullName"
         Me.txtFullName.PlaceholderText = ""
         Me.txtFullName.SelectedText = ""
@@ -136,7 +139,7 @@ Partial Class frmEditStaffAccount
         Me.lblRole.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblRole.Location = New System.Drawing.Point(44, 397)
         Me.lblRole.Name = "lblRole"
-        Me.lblRole.Size = New System.Drawing.Size(61, 34)
+        Me.lblRole.Size = New System.Drawing.Size(59, 33)
         Me.lblRole.TabIndex = 76
         Me.lblRole.Text = "ROLE"
         '
@@ -154,7 +157,7 @@ Partial Class frmEditStaffAccount
         Me.cboRole.Items.AddRange(New Object() {"Cash", "Card"})
         Me.cboRole.Location = New System.Drawing.Point(44, 439)
         Me.cboRole.Name = "cboRole"
-        Me.cboRole.Size = New System.Drawing.Size(537, 53)
+        Me.cboRole.Size = New System.Drawing.Size(537, 50)
         Me.cboRole.TabIndex = 75
         '
         'btnCancel
@@ -198,7 +201,7 @@ Partial Class frmEditStaffAccount
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(38, 91)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(400, 31)
+        Me.Label1.Size = New System.Drawing.Size(419, 32)
         Me.Label1.TabIndex = 72
         Me.Label1.Text = "Edit details for owner or staff member"
         '
@@ -209,7 +212,7 @@ Partial Class frmEditStaffAccount
         Me.lblCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblCustomers.Location = New System.Drawing.Point(34, 37)
         Me.lblCustomers.Name = "lblCustomers"
-        Me.lblCustomers.Size = New System.Drawing.Size(376, 54)
+        Me.lblCustomers.Size = New System.Drawing.Size(380, 54)
         Me.lblCustomers.TabIndex = 71
         Me.lblCustomers.Text = "Edit Staff Account"
         '
@@ -236,6 +239,7 @@ Partial Class frmEditStaffAccount
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblCustomers)
         Me.Name = "frmEditStaffAccount"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "frmEditStaffAccount"
         CType(Me.errorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
