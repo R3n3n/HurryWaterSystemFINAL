@@ -8,9 +8,9 @@ Public Class frmReports
 
         cboDateRange.Items.Clear()
         cboDateRange.Items.AddRange({"This Month", "Last Month", "Last 7 Days", "This Year", "Last Year"})
-        cboDateRange.SelectedIndex = 0   ' defaults to This Month
+        cboDateRange.SelectedIndex = 0
 
-        LoadLowStockList()   ' not date-dependent — load once, no refresh needed on filter change
+        LoadLowStockList()
         RefreshDateFilteredReports()
     End Sub
 
@@ -21,7 +21,7 @@ Public Class frmReports
         lsvLowStock.Columns.Clear()
         lsvLowStock.Columns.Add("Item", 227)
         lsvLowStock.Columns.Add("Current Stock", 161)
-        lsvLowStock.Columns.Add("Reorder Point", 161)
+        lsvLowStock.Columns.Add("Reorder Point", 185)
 
         lsvCustomerSummary.View = View.Details
         lsvCustomerSummary.FullRowSelect = True
