@@ -13,20 +13,12 @@ Public Class frmDispenserBorrowing
         lsvBorrowing.GridLines = True
 
         lsvBorrowing.Columns.Clear()
-        lsvBorrowing.Columns.Add("Customer", 322)
+        lsvBorrowing.Columns.Add("Customer", 344)
         lsvBorrowing.Columns.Add("Dispenser Ref.", 322)
         lsvBorrowing.Columns.Add("Borrowed", 263)
         lsvBorrowing.Columns.Add("Expected Return", 351)
         lsvBorrowing.Columns.Add("Status", 263)
     End Sub
-
-    ''' <summary>
-    ''' "Overdue" is NOT a status the user picks — it's computed here,
-    ''' at display time, by comparing expectedReturnDate to today.
-    ''' Only "Borrowed" and "Returned" are ever actually stored;
-    ''' this keeps the database from going stale the moment a due
-    ''' date passes without anyone manually updating a status field.
-    ''' </summary>
     Private Sub LoadBorrowList()
         lsvBorrowing.Items.Clear()
 

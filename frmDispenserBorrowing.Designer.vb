@@ -79,7 +79,7 @@ Partial Class frmDispenserBorrowing
         'lsvBorrowing
         '
         Me.lsvBorrowing.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
-        Me.lsvBorrowing.Font = New System.Drawing.Font("Segoe UI Semibold", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lsvBorrowing.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lsvBorrowing.HideSelection = False
         Me.lsvBorrowing.Location = New System.Drawing.Point(38, 184)
         Me.lsvBorrowing.Name = "lsvBorrowing"
