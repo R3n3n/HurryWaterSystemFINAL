@@ -26,34 +26,49 @@ Public Class frmAddCustomer
     Private Function ValidateInputs() As Boolean
         Dim isValid As Boolean = True
 
+        ' Name Validation
         Dim nameMessage As String = NameProblem(txtName.Text.Trim())
         If nameMessage <> "" Then
             errorProvider1.SetError(txtName, nameMessage)
             isValid = False
         End If
 
+        ' Contact Number Validation
         Dim contactMessage As String = ContactProblem(txtContactNo.Text.Trim())
         If contactMessage <> "" Then
             errorProvider1.SetError(txtContactNo, contactMessage)
             isValid = False
-        End If
-
-        Dim address As String = txtAddress.Text.Trim()
-        If String.IsNullOrEmpty(address) Then
-            errorProvider1.SetError(txtAddress, "Address is required.")
-            isValid = False
-        End If
-
-        If txtContactNo.Text.Trim() = "" Then
+        ElseIf txtContactNo.Text.Trim() = "" Then
             errorProvider1.SetError(txtContactNo, "Enter your contact number.")
             isValid = False
         End If
 
-        If cboCustomerType.SelectedIndex = -1 Then
+        ' Address Validation
+        Dim address As String = txtAddress.Text.Trim()
+        If String.IsNullOrEmpty(address) Then
+            errorProvider1.SetError(txtAddress, "Address is required.")
+            isValid = False
+        ElseIf address.Length < 5 Then
+            errorProvider1.SetError(txtAddress, "Address is too short. Please enter a complete address.")
+            isValid = False
+        ElseIf address.Length > 255 Then
+            errorProvider1.SetError(txtAddress, "Address is too long (max 255 characters).")
+            isValid = False
+        End If
+
+        ' Customer Type Validation
+        If cboCustomerType.SelectedIndex = -1 OrElse String.IsNullOrWhiteSpace(cboCustomerType.Text) Then
             errorProvider1.SetError(cboCustomerType, "Select a customer type.")
             isValid = False
         End If
 
+        ' Payment Mode Validation
+        If cboPaymentMode.SelectedIndex = -1 OrElse String.IsNullOrWhiteSpace(cboPaymentMode.Text) Then
+            errorProvider1.SetError(cboPaymentMode, "Select a preferred payment mode.")
+            isValid = False
+        End If
+
+        ' Delivery Cycle Validation
         Dim cycleText As String = txtDeliveryCycle.Text.Trim()
         Dim cycleValue As Integer
         If String.IsNullOrEmpty(cycleText) Then
@@ -106,5 +121,9 @@ Public Class frmAddCustomer
         cmd.Parameters.AddWithValue("@cycle", Integer.Parse(txtDeliveryCycle.Text.Trim()))
         cmd.Parameters.AddWithValue("@payment", If(cboPaymentMode.SelectedItem Is Nothing, "Cash", cboPaymentMode.SelectedItem.ToString()))
         cmd.ExecuteNonQuery()
+    End Sub
+
+    Private Sub frmAddCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

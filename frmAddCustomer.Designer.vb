@@ -56,6 +56,7 @@ Partial Class frmAddCustomer
         Me.txtName.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtName.Location = New System.Drawing.Point(40, 190)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtName.Name = "txtName"
         Me.txtName.PlaceholderText = ""
         Me.txtName.SelectedText = ""
@@ -75,6 +76,7 @@ Partial Class frmAddCustomer
         Me.txtContactNo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContactNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtContactNo.Location = New System.Drawing.Point(40, 287)
+        Me.txtContactNo.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.PlaceholderText = ""
         Me.txtContactNo.SelectedText = ""
@@ -94,6 +96,7 @@ Partial Class frmAddCustomer
         Me.txtAddress.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtAddress.Location = New System.Drawing.Point(40, 386)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.PlaceholderText = ""
         Me.txtAddress.SelectedText = ""
@@ -114,7 +117,7 @@ Partial Class frmAddCustomer
         Me.cboCustomerType.Items.AddRange(New Object() {"Household", "Company"})
         Me.cboCustomerType.Location = New System.Drawing.Point(40, 483)
         Me.cboCustomerType.Name = "cboCustomerType"
-        Me.cboCustomerType.Size = New System.Drawing.Size(237, 53)
+        Me.cboCustomerType.Size = New System.Drawing.Size(237, 50)
         Me.cboCustomerType.TabIndex = 3
         '
         'cboPaymentMode
@@ -131,7 +134,7 @@ Partial Class frmAddCustomer
         Me.cboPaymentMode.Items.AddRange(New Object() {"Cash", "Card"})
         Me.cboPaymentMode.Location = New System.Drawing.Point(40, 584)
         Me.cboPaymentMode.Name = "cboPaymentMode"
-        Me.cboPaymentMode.Size = New System.Drawing.Size(539, 53)
+        Me.cboPaymentMode.Size = New System.Drawing.Size(539, 50)
         Me.cboPaymentMode.TabIndex = 4
         '
         'txtDeliveryCycle
@@ -147,6 +150,7 @@ Partial Class frmAddCustomer
         Me.txtDeliveryCycle.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDeliveryCycle.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtDeliveryCycle.Location = New System.Drawing.Point(341, 483)
+        Me.txtDeliveryCycle.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtDeliveryCycle.Name = "txtDeliveryCycle"
         Me.txtDeliveryCycle.PlaceholderText = ""
         Me.txtDeliveryCycle.SelectedText = ""
@@ -198,7 +202,7 @@ Partial Class frmAddCustomer
         Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(40, 149)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(75, 34)
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(71, 33)
         Me.Guna2HtmlLabel3.TabIndex = 10
         Me.Guna2HtmlLabel3.Text = "NAME"
         '
@@ -209,7 +213,7 @@ Partial Class frmAddCustomer
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(34, 85)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(319, 31)
+        Me.Label1.Size = New System.Drawing.Size(334, 32)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Create a new customer record"
         '
@@ -220,7 +224,7 @@ Partial Class frmAddCustomer
         Me.lblCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblCustomers.Location = New System.Drawing.Point(31, 32)
         Me.lblCustomers.Name = "lblCustomers"
-        Me.lblCustomers.Size = New System.Drawing.Size(303, 54)
+        Me.lblCustomers.Size = New System.Drawing.Size(304, 54)
         Me.lblCustomers.TabIndex = 11
         Me.lblCustomers.Text = "Add Customer"
         '
@@ -231,7 +235,7 @@ Partial Class frmAddCustomer
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(40, 252)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(220, 34)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(213, 33)
         Me.Guna2HtmlLabel1.TabIndex = 13
         Me.Guna2HtmlLabel1.Text = "CONTACT NUMBER"
         '
@@ -242,7 +246,7 @@ Partial Class frmAddCustomer
         Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(40, 348)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(110, 34)
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(106, 33)
         Me.Guna2HtmlLabel2.TabIndex = 14
         Me.Guna2HtmlLabel2.Text = "ADDRESS"
         '
@@ -253,7 +257,7 @@ Partial Class frmAddCustomer
         Me.Guna2HtmlLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(40, 448)
         Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(60, 34)
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(56, 33)
         Me.Guna2HtmlLabel4.TabIndex = 15
         Me.Guna2HtmlLabel4.Text = "TYPE"
         '
@@ -264,7 +268,7 @@ Partial Class frmAddCustomer
         Me.Guna2HtmlLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(341, 448)
         Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
-        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(73, 34)
+        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(69, 33)
         Me.Guna2HtmlLabel5.TabIndex = 16
         Me.Guna2HtmlLabel5.Text = "CYCLE"
         '
@@ -275,7 +279,7 @@ Partial Class frmAddCustomer
         Me.Guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(40, 544)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
-        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(250, 34)
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(242, 33)
         Me.Guna2HtmlLabel6.TabIndex = 17
         Me.Guna2HtmlLabel6.Text = "PREFERRED PAYMENT"
         '
