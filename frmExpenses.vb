@@ -2,14 +2,62 @@
 
 Public Class frmExpenses
 
+    Private isLoading As Boolean = True
+
     Private Sub frmExpenses_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetupListView()
+        SetupDateRangeCombo()
+        isLoading = False
         RefreshAll()
     End Sub
 
+    Private Sub SetupDateRangeCombo()
+        With cboDateRange
+            .Items.Clear()
+            .Items.AddRange({"This Month", "Last Month", "Last 7 Days", "This Year", "Last Year", "All Time"})
+            .SelectedIndex = 0
+        End With
+
+        Me.Controls.Add(cboDateRange)
+        cboDateRange.BringToFront()
+    End Sub
+
+    Private Sub cboDateRange_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDateRange.SelectedIndexChanged
+        If isLoading Then Return
+        RefreshAll()
+    End Sub
+    Private Function GetSelectedDateRange() As (StartDate As Date, EndDate As Date)
+        Dim today As Date = Date.Today
+
+        Select Case cboDateRange.Text
+            Case "Last 7 Days"
+                Return (today.AddDays(-6), today)
+            Case "Last Month"
+                Dim firstOfLast As Date = New Date(today.Year, today.Month, 1).AddMonths(-1)
+                Return (firstOfLast, firstOfLast.AddMonths(1).AddDays(-1))
+            Case "This Year"
+                Return (New Date(today.Year, 1, 1), today)
+            Case "Last Year"
+                Return (New Date(today.Year - 1, 1, 1), New Date(today.Year - 1, 12, 31))
+            Case "All Time"
+                Return (New Date(2000, 1, 1), New Date(2999, 12, 31))
+            Case Else ' "This Month"
+                Return (New Date(today.Year, today.Month, 1), today)
+        End Select
+    End Function
+
     Private Sub RefreshAll()
-        LoadExpenseSummary()
-        LoadExpenseList()
+        Dim range = GetSelectedDateRange()
+        UpdateCardCaptions()
+        LoadExpenseSummary(range.StartDate, range.EndDate)
+        LoadExpenseList(range.StartDate, range.EndDate)
+    End Sub
+
+    Private Sub UpdateCardCaptions()
+        Label5.Text = "UTILITIES"
+        Label1.Text = "SUPPLIES"
+        Label3.Text = "SALARY"
+        Label4.Text = "TOTAL"
     End Sub
 
     Private Sub SetupListView()
@@ -24,7 +72,7 @@ Public Class frmExpenses
         lsvExpenses.Columns.Add("Description", 732)
     End Sub
 
-    Private Sub LoadExpenseSummary()
+    Private Sub LoadExpenseSummary(startDate As Date, endDate As Date)
         lblGasTotal.Text = "₱0.00"
         lblSalaryTotal.Text = "₱0.00"
         lblSuppliesTotal.Text = "₱0.00"
@@ -33,12 +81,14 @@ Public Class frmExpenses
         Dim grandTotal As Decimal = 0
 
         sql = "SELECT category, SUM(amount) AS total FROM tblExpenses " &
-              "WHERE MONTH(expenseDate) = MONTH(CURDATE()) AND YEAR(expenseDate) = YEAR(CURDATE()) " &
+              "WHERE expenseDate BETWEEN @start AND @end " &
               "GROUP BY category"
 
         Try
             connection()
             cmd = New MySqlCommand(sql, cn)
+            cmd.Parameters.AddWithValue("@start", startDate)
+            cmd.Parameters.AddWithValue("@end", endDate)
             dr = cmd.ExecuteReader()
 
             While dr.Read()
@@ -62,15 +112,18 @@ Public Class frmExpenses
         End Try
     End Sub
 
-    Private Sub LoadExpenseList()
+    Private Sub LoadExpenseList(startDate As Date, endDate As Date)
         lsvExpenses.Items.Clear()
 
         sql = "SELECT expenseId, expenseDate, category, amount, description " &
-              "FROM tblExpenses ORDER BY expenseDate DESC, expenseId DESC"
+              "FROM tblExpenses WHERE expenseDate BETWEEN @start AND @end " &
+              "ORDER BY expenseDate DESC, expenseId DESC"
 
         Try
             connection()
             cmd = New MySqlCommand(sql, cn)
+            cmd.Parameters.AddWithValue("@start", startDate)
+            cmd.Parameters.AddWithValue("@end", endDate)
             dr = cmd.ExecuteReader()
 
             While dr.Read()

@@ -64,7 +64,7 @@ Partial Class frmReports
         Me.lblSalesDelivery.AutoSize = True
         Me.lblSalesDelivery.Font = New System.Drawing.Font("Segoe UI Black", 58.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSalesDelivery.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
-        Me.lblSalesDelivery.Location = New System.Drawing.Point(29, 41)
+        Me.lblSalesDelivery.Location = New System.Drawing.Point(28, 51)
         Me.lblSalesDelivery.Name = "lblSalesDelivery"
         Me.lblSalesDelivery.Size = New System.Drawing.Size(345, 104)
         Me.lblSalesDelivery.TabIndex = 18

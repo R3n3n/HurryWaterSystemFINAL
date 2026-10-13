@@ -39,6 +39,7 @@ Partial Class frmExpenses
         Me.lsvExpenses = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnEdit = New Guna.UI2.WinForms.Guna2GradientButton()
+        Me.cboDateRange = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -50,7 +51,7 @@ Partial Class frmExpenses
         Me.lblSalesDelivery.AutoSize = True
         Me.lblSalesDelivery.Font = New System.Drawing.Font("Segoe UI Black", 58.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSalesDelivery.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
-        Me.lblSalesDelivery.Location = New System.Drawing.Point(38, 32)
+        Me.lblSalesDelivery.Location = New System.Drawing.Point(38, 53)
         Me.lblSalesDelivery.Name = "lblSalesDelivery"
         Me.lblSalesDelivery.Size = New System.Drawing.Size(398, 104)
         Me.lblSalesDelivery.TabIndex = 16
@@ -248,12 +249,28 @@ Partial Class frmExpenses
         Me.btnEdit.TabIndex = 58
         Me.btnEdit.Text = "Edit Expense"
         '
+        'cboDateRange
+        '
+        Me.cboDateRange.BackColor = System.Drawing.Color.Transparent
+        Me.cboDateRange.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboDateRange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboDateRange.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboDateRange.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboDateRange.Font = New System.Drawing.Font("Segoe UI", 20.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboDateRange.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cboDateRange.ItemHeight = 50
+        Me.cboDateRange.Location = New System.Drawing.Point(625, 80)
+        Me.cboDateRange.Name = "cboDateRange"
+        Me.cboDateRange.Size = New System.Drawing.Size(287, 56)
+        Me.cboDateRange.TabIndex = 59
+        '
         'frmExpenses
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1535, 1061)
+        Me.Controls.Add(Me.cboDateRange)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.lsvExpenses)
         Me.Controls.Add(Me.Guna2GradientPanel1)
@@ -294,4 +311,5 @@ Partial Class frmExpenses
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents Label5 As Label
+    Friend WithEvents cboDateRange As Guna.UI2.WinForms.Guna2ComboBox
 End Class
