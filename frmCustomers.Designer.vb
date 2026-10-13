@@ -39,7 +39,7 @@ Partial Class frmCustomers
         Me.lblCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblCustomers.Location = New System.Drawing.Point(44, 46)
         Me.lblCustomers.Name = "lblCustomers"
-        Me.lblCustomers.Size = New System.Drawing.Size(449, 118)
+        Me.lblCustomers.Size = New System.Drawing.Size(452, 104)
         Me.lblCustomers.TabIndex = 12
         Me.lblCustomers.Text = "Customers"
         '
@@ -68,7 +68,7 @@ Partial Class frmCustomers
         Me.lblActiveAccounts.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblActiveAccounts.Location = New System.Drawing.Point(60, 164)
         Me.lblActiveAccounts.Name = "lblActiveAccounts"
-        Me.lblActiveAccounts.Size = New System.Drawing.Size(290, 53)
+        Me.lblActiveAccounts.Size = New System.Drawing.Size(288, 47)
         Me.lblActiveAccounts.TabIndex = 14
         Me.lblActiveAccounts.Text = "# active accounts"
         '
@@ -93,7 +93,7 @@ Partial Class frmCustomers
         '
         'lsvCustomers
         '
-        Me.lsvCustomers.Font = New System.Drawing.Font("Segoe UI Semibold", 23.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lsvCustomers.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lsvCustomers.HideSelection = False
         Me.lsvCustomers.Location = New System.Drawing.Point(69, 343)
         Me.lsvCustomers.Name = "lsvCustomers"
@@ -124,7 +124,7 @@ Partial Class frmCustomers
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1535, 1082)
+        Me.ClientSize = New System.Drawing.Size(1535, 1061)
         Me.Controls.Add(Me.btnEditCustomer)
         Me.Controls.Add(Me.lsvCustomers)
         Me.Controls.Add(Me.txtSearch)

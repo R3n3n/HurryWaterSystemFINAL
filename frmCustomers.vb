@@ -10,7 +10,8 @@ Public Class frmCustomers
     Private ReadOnly toggleItem As New ToolStripMenuItem()
     Private ReadOnly hint As New ToolTip()
 
-    Private Const STATUS_COLUMN As Integer = 4
+    ' CHANGED: was 4. Address was inserted at column 2, so Status moved to column 5.
+    Private Const STATUS_COLUMN As Integer = 5
 
     Private Sub frmCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetupListView()
@@ -20,17 +21,18 @@ Public Class frmCustomers
     End Sub
 
     Private Sub SetupListView()
-        lsvCustomers.View = View.Details              ' <-- your ListView's name
+        lsvCustomers.View = View.Details
         lsvCustomers.FullRowSelect = True
         lsvCustomers.GridLines = True
         lsvCustomers.HideSelection = False
 
         lsvCustomers.Columns.Clear()
-        lsvCustomers.Columns.Add("Customer", 400)     ' <-- your columns
-        lsvCustomers.Columns.Add("Contact", 260)
-        lsvCustomers.Columns.Add("Customer Type", 300)
-        lsvCustomers.Columns.Add("Frequency", 260)
-        lsvCustomers.Columns.Add("Status", 230)
+        lsvCustomers.Columns.Add("Customer", 260)
+        lsvCustomers.Columns.Add("Contact", 150)
+        lsvCustomers.Columns.Add("Address", 570)
+        lsvCustomers.Columns.Add("Customer Type", 170)
+        lsvCustomers.Columns.Add("Frequency", 120)
+        lsvCustomers.Columns.Add("Status", 110)
     End Sub
 
     Private Sub SetupRowMenu()
@@ -44,9 +46,10 @@ Public Class frmCustomers
     Private Sub LoadCustomerList()
         lsvCustomers.Items.Clear()
 
-        sql = "SELECT customerId, customerName, contactNo, customerType, deliveryFrequencyDays, status " &
+        ' CHANGED: address added to the SELECT, and to the search filter
+        sql = "SELECT customerId, customerName, contactNo, address, customerType, deliveryFrequencyDays, status " &
               "FROM tblCustomers " &
-              "WHERE (customerName LIKE @search OR contactNo LIKE @search OR customerType LIKE @search) " &
+              "WHERE (customerName LIKE @search OR contactNo LIKE @search OR address LIKE @search OR customerType LIKE @search) " &
               "ORDER BY (status = 'Active') DESC, customerName"
 
         Try
@@ -64,6 +67,7 @@ Public Class frmCustomers
             While dr.Read()
                 Dim item As New ListViewItem(dr("customerName").ToString())
                 item.SubItems.Add(dr("contactNo").ToString())
+                item.SubItems.Add(dr("address").ToString())   ' CHANGED: new line, same order as the columns
                 item.SubItems.Add(dr("customerType").ToString())
                 item.SubItems.Add(dr("deliveryFrequencyDays").ToString())
                 item.SubItems.Add(dr("status").ToString())
