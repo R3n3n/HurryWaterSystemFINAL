@@ -31,6 +31,7 @@ Partial Class frmSalesDelivery
         Me.lsvOrders = New System.Windows.Forms.ListView()
         Me.btnUpdateStatus = New Guna.UI2.WinForms.Guna2Button()
         Me.btnDeleteOrder = New Guna.UI2.WinForms.Guna2GradientButton()
+        Me.cboFilterWeek = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.SuspendLayout()
         '
         'lblSalesDelivery
@@ -89,7 +90,7 @@ Partial Class frmSalesDelivery
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.PlaceholderText = ""
         Me.txtSearch.SelectedText = ""
-        Me.txtSearch.Size = New System.Drawing.Size(672, 60)
+        Me.txtSearch.Size = New System.Drawing.Size(487, 60)
         Me.txtSearch.TabIndex = 17
         '
         'cboFilterPickup
@@ -103,9 +104,9 @@ Partial Class frmSalesDelivery
         Me.cboFilterPickup.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cboFilterPickup.ItemHeight = 50
         Me.cboFilterPickup.Items.AddRange(New Object() {"Pending", "Picked-up", "Delivered"})
-        Me.cboFilterPickup.Location = New System.Drawing.Point(768, 251)
+        Me.cboFilterPickup.Location = New System.Drawing.Point(892, 251)
         Me.cboFilterPickup.Name = "cboFilterPickup"
-        Me.cboFilterPickup.Size = New System.Drawing.Size(332, 56)
+        Me.cboFilterPickup.Size = New System.Drawing.Size(274, 56)
         Me.cboFilterPickup.TabIndex = 18
         '
         'cboFilterPayment
@@ -119,9 +120,9 @@ Partial Class frmSalesDelivery
         Me.cboFilterPayment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cboFilterPayment.ItemHeight = 50
         Me.cboFilterPayment.Items.AddRange(New Object() {"Unpaid", "Paid"})
-        Me.cboFilterPayment.Location = New System.Drawing.Point(1143, 251)
+        Me.cboFilterPayment.Location = New System.Drawing.Point(1202, 251)
         Me.cboFilterPayment.Name = "cboFilterPayment"
-        Me.cboFilterPayment.Size = New System.Drawing.Size(332, 56)
+        Me.cboFilterPayment.Size = New System.Drawing.Size(273, 56)
         Me.cboFilterPayment.TabIndex = 19
         '
         'lsvOrders
@@ -170,12 +171,29 @@ Partial Class frmSalesDelivery
         Me.btnDeleteOrder.TabIndex = 20
         Me.btnDeleteOrder.Text = "Delete"
         '
+        'cboFilterWeek
+        '
+        Me.cboFilterWeek.BackColor = System.Drawing.Color.Transparent
+        Me.cboFilterWeek.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboFilterWeek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboFilterWeek.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboFilterWeek.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboFilterWeek.Font = New System.Drawing.Font("Segoe UI", 14.75!)
+        Me.cboFilterWeek.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cboFilterWeek.ItemHeight = 50
+        Me.cboFilterWeek.Items.AddRange(New Object() {"Pending", "Picked-up", "Delivered"})
+        Me.cboFilterWeek.Location = New System.Drawing.Point(585, 251)
+        Me.cboFilterWeek.Name = "cboFilterWeek"
+        Me.cboFilterWeek.Size = New System.Drawing.Size(274, 56)
+        Me.cboFilterWeek.TabIndex = 35
+        '
         'frmSalesDelivery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1535, 1061)
+        Me.Controls.Add(Me.cboFilterWeek)
         Me.Controls.Add(Me.btnDeleteOrder)
         Me.Controls.Add(Me.btnUpdateStatus)
         Me.Controls.Add(Me.lsvOrders)
@@ -201,4 +219,5 @@ Partial Class frmSalesDelivery
     Friend WithEvents lsvOrders As ListView
     Friend WithEvents btnUpdateStatus As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnDeleteOrder As Guna.UI2.WinForms.Guna2GradientButton
+    Friend WithEvents cboFilterWeek As Guna.UI2.WinForms.Guna2ComboBox
 End Class

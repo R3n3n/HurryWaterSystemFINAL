@@ -18,6 +18,10 @@ Public Class frmSalesDelivery
         cboFilterPayment.Items.AddRange({"All payment statuses", "Unpaid", "Paid"})
         cboFilterPayment.SelectedIndex = 0
 
+        cboFilterWeek.Items.Clear()
+        cboFilterWeek.Items.AddRange({"All dates", "This Week", "This Month", "Last Year"})
+        cboFilterWeek.SelectedIndex = 0
+
         btnUpdateStatus.Enabled = False
         btnDeleteOrder.Enabled = False
         btnDeleteOrder.Visible = (CurrentUserRole = "Owner")
@@ -44,6 +48,26 @@ Public Class frmSalesDelivery
         lsvOrders.Columns.Add("Recorded By", 190)
         lsvOrders.Columns.Add("Last Updated By", 200)
     End Sub
+    Private Function GetDateFilter(ByRef startDate As Date, ByRef endDate As Date) As Boolean
+        Dim today As Date = Date.Today
+
+        Select Case cboFilterWeek.Text
+            Case "This Week"
+                startDate = today.AddDays(-((CInt(today.DayOfWeek) + 6) Mod 7))   ' Monday
+                endDate = today
+                Return True
+            Case "This Month"
+                startDate = New Date(today.Year, today.Month, 1)
+                endDate = today
+                Return True
+            Case "Last Year"
+                startDate = New Date(today.Year - 1, 1, 1)
+                endDate = New Date(today.Year - 1, 12, 31)
+                Return True
+            Case Else   ' "All dates"
+                Return False
+        End Select
+    End Function
 
     Private Sub LoadOrderList()
         lsvOrders.Items.Clear()
@@ -63,8 +87,12 @@ Public Class frmSalesDelivery
         Dim filterPickup As Boolean = (cboFilterPickup.SelectedIndex > 0)
         Dim filterPayment As Boolean = (cboFilterPayment.SelectedIndex > 0)
 
+        Dim startDate, endDate As Date
+        Dim filterDate As Boolean = GetDateFilter(startDate, endDate)
+
         If filterPickup Then sql &= " AND o.pickupStatus = @pickupStatus"
         If filterPayment Then sql &= " AND o.paymentStatus = @paymentStatus"
+        If filterDate Then sql &= " AND o.orderDate BETWEEN @startDate AND @endDate"
         sql &= " ORDER BY o.orderDate DESC, o.orderId DESC"
 
         Try
@@ -74,6 +102,10 @@ Public Class frmSalesDelivery
             cmd.Parameters.AddWithValue("@exact", txtSearch.Text.Trim())
             If filterPickup Then cmd.Parameters.AddWithValue("@pickupStatus", cboFilterPickup.Text)
             If filterPayment Then cmd.Parameters.AddWithValue("@paymentStatus", cboFilterPayment.Text)
+            If filterDate Then
+                cmd.Parameters.AddWithValue("@startDate", startDate)
+                cmd.Parameters.AddWithValue("@endDate", endDate)
+            End If
             dr = cmd.ExecuteReader()
 
             While dr.Read()
@@ -144,6 +176,11 @@ Public Class frmSalesDelivery
         LoadOrderList()
     End Sub
 
+    Private Sub cboFilterWeek_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFilterWeek.SelectedIndexChanged
+        If isLoading Then Return
+        LoadOrderList()
+    End Sub
+
     Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
         Dim addForm As New frmAddSalesOrder()
 
@@ -184,10 +221,6 @@ Public Class frmSalesDelivery
         statusForm.Dispose()
     End Sub
 
-    ''' <summary>
-    ''' The Delete button: asks for confirmation, then deletes the selected order
-    ''' (and its items) for good.
-    ''' </summary>
     Private Sub btnDeleteOrder_Click(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
         If lsvOrders.SelectedItems.Count = 0 Then
             MsgBox("Select an order first.", MsgBoxStyle.Exclamation, "No selection")
@@ -234,5 +267,4 @@ Public Class frmSalesDelivery
 
         LoadOrderList()
     End Sub
-
 End Class
