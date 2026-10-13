@@ -1,8 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class frmEditSupplier
-
-    ''' <summary>0 = add a new supplier, otherwise the supplier being edited.</summary>
     Public Property SupplierID As Integer
 
     Private Sub frmEditSupplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -65,23 +63,37 @@ Public Class frmEditSupplier
 
     Private Function ValidateInputs() As Boolean
         Dim isValid As Boolean = True
-
         Dim name As String = txtSupplierName.Text.Trim()
+        Dim contact As String = txtContact.Text.Trim()
+        Dim items As String = txtItemsSupplied.Text.Trim()
+
+        ' Supplier Name Validation
         If name = "" Then
-            errorProvider1.SetError(txtSupplierName, "Enter the supplier's name.")
+            errorProvider1.SetError(txtSupplierName, "Please fill up the supplier name.")
+            txtSupplierName.Focus()
             isValid = False
         ElseIf name.Length > 100 Then
             errorProvider1.SetError(txtSupplierName, "Name is too long (max 100 characters).")
             isValid = False
         End If
 
-        ' Contact and items supplied are optional, but capped to the column sizes
-        If txtContact.Text.Trim().Length > 150 Then
+        If contact = "" Then
+            errorProvider1.SetError(txtContact, "Please fill up the contact information.")
+            If isValid Then txtContact.Focus()
+        ElseIf contact.Length > 150 Then
             errorProvider1.SetError(txtContact, "Too long (max 150 characters).")
+            isValid = False
+        ElseIf Not System.Text.RegularExpressions.Regex.IsMatch(contact, "^\+?[0-9\s\-()]{7,15}$") Then
+            errorProvider1.SetError(txtContact, "Please enter a valid phone number (e.g., 0912-345-6789 or +639123456789).")
+            If isValid Then txtContact.Focus()
             isValid = False
         End If
 
-        If txtItemsSupplied.Text.Trim().Length > 255 Then
+        If items = "" Then
+            errorProvider1.SetError(txtItemsSupplied, "Please fill up the items supplied.")
+            If isValid Then txtItemsSupplied.Focus()
+            isValid = False
+        ElseIf items.Length > 255 Then
             errorProvider1.SetError(txtItemsSupplied, "Too long (max 255 characters).")
             isValid = False
         End If

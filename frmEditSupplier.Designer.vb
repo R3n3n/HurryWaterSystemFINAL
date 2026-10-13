@@ -43,9 +43,10 @@ Partial Class frmEditSupplier
         Me.lblFormTitle.Font = New System.Drawing.Font("Segoe UI Black", 29.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFormTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblFormTitle.Location = New System.Drawing.Point(31, 26)
-        Me.lblFormTitle.Text = "Add Supplier"
         Me.lblFormTitle.Name = "lblFormTitle"
+        Me.lblFormTitle.Size = New System.Drawing.Size(279, 54)
         Me.lblFormTitle.TabIndex = 0
+        Me.lblFormTitle.Text = "Add Supplier"
         '
         'lblFormHint
         '
@@ -53,9 +54,10 @@ Partial Class frmEditSupplier
         Me.lblFormHint.Font = New System.Drawing.Font("Segoe UI", 17.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFormHint.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblFormHint.Location = New System.Drawing.Point(35, 80)
-        Me.lblFormHint.Text = "Who you buy supplies from"
         Me.lblFormHint.Name = "lblFormHint"
+        Me.lblFormHint.Size = New System.Drawing.Size(310, 32)
         Me.lblFormHint.TabIndex = 1
+        Me.lblFormHint.Text = "Who you buy supplies from"
         '
         'lblName
         '
@@ -63,10 +65,10 @@ Partial Class frmEditSupplier
         Me.lblName.Font = New System.Drawing.Font("Segoe UI", 17.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblName.Location = New System.Drawing.Point(37, 150)
-        Me.lblName.Size = New System.Drawing.Size(560, 34)
-        Me.lblName.Text = "SUPPLIER NAME"
         Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(181, 33)
         Me.lblName.TabIndex = 2
+        Me.lblName.Text = "SUPPLIER NAME"
         '
         'txtSupplierName
         '
@@ -81,10 +83,11 @@ Partial Class frmEditSupplier
         Me.txtSupplierName.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSupplierName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSupplierName.Location = New System.Drawing.Point(37, 192)
+        Me.txtSupplierName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtSupplierName.Name = "txtSupplierName"
         Me.txtSupplierName.PlaceholderText = ""
         Me.txtSupplierName.SelectedText = ""
         Me.txtSupplierName.Size = New System.Drawing.Size(537, 53)
-        Me.txtSupplierName.Name = "txtSupplierName"
         Me.txtSupplierName.TabIndex = 3
         '
         'lblContact
@@ -93,10 +96,10 @@ Partial Class frmEditSupplier
         Me.lblContact.Font = New System.Drawing.Font("Segoe UI", 17.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblContact.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblContact.Location = New System.Drawing.Point(37, 270)
-        Me.lblContact.Size = New System.Drawing.Size(560, 34)
-        Me.lblContact.Text = "CONTACT INFO"
         Me.lblContact.Name = "lblContact"
+        Me.lblContact.Size = New System.Drawing.Size(213, 33)
         Me.lblContact.TabIndex = 4
+        Me.lblContact.Text = "CONTACT NUMBER"
         '
         'txtContact
         '
@@ -111,10 +114,11 @@ Partial Class frmEditSupplier
         Me.txtContact.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtContact.Location = New System.Drawing.Point(37, 312)
+        Me.txtContact.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtContact.Name = "txtContact"
         Me.txtContact.PlaceholderText = ""
         Me.txtContact.SelectedText = ""
         Me.txtContact.Size = New System.Drawing.Size(537, 53)
-        Me.txtContact.Name = "txtContact"
         Me.txtContact.TabIndex = 5
         '
         'lblItems
@@ -123,10 +127,10 @@ Partial Class frmEditSupplier
         Me.lblItems.Font = New System.Drawing.Font("Segoe UI", 17.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblItems.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblItems.Location = New System.Drawing.Point(37, 390)
-        Me.lblItems.Size = New System.Drawing.Size(560, 34)
-        Me.lblItems.Text = "ITEMS SUPPLIED"
         Me.lblItems.Name = "lblItems"
+        Me.lblItems.Size = New System.Drawing.Size(182, 33)
         Me.lblItems.TabIndex = 6
+        Me.lblItems.Text = "ITEMS SUPPLIED"
         '
         'txtItemsSupplied
         '
@@ -141,10 +145,11 @@ Partial Class frmEditSupplier
         Me.txtItemsSupplied.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtItemsSupplied.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtItemsSupplied.Location = New System.Drawing.Point(37, 432)
+        Me.txtItemsSupplied.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtItemsSupplied.Name = "txtItemsSupplied"
         Me.txtItemsSupplied.PlaceholderText = ""
         Me.txtItemsSupplied.SelectedText = ""
         Me.txtItemsSupplied.Size = New System.Drawing.Size(537, 53)
-        Me.txtItemsSupplied.Name = "txtItemsSupplied"
         Me.txtItemsSupplied.TabIndex = 7
         '
         'btnCancel
@@ -158,10 +163,10 @@ Partial Class frmEditSupplier
         Me.btnCancel.Font = New System.Drawing.Font("Segoe UI", 13.25!)
         Me.btnCancel.ForeColor = System.Drawing.Color.Black
         Me.btnCancel.Location = New System.Drawing.Point(202, 600)
-        Me.btnCancel.Size = New System.Drawing.Size(177, 54)
-        Me.btnCancel.Text = "Cancel"
         Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(177, 54)
         Me.btnCancel.TabIndex = 8
+        Me.btnCancel.Text = "Cancel"
         '
         'btnSave
         '
@@ -176,10 +181,10 @@ Partial Class frmEditSupplier
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 13.25!)
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Location = New System.Drawing.Point(397, 600)
-        Me.btnSave.Size = New System.Drawing.Size(177, 54)
-        Me.btnSave.Text = "Save Supplier"
         Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(177, 54)
         Me.btnSave.TabIndex = 9
+        Me.btnSave.Text = "Save Supplier"
         '
         'errorProvider1
         '
@@ -201,10 +206,10 @@ Partial Class frmEditSupplier
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.lblFormHint)
         Me.Controls.Add(Me.lblFormTitle)
-        Me.Name = "frmEditSupplier"
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
+        Me.Name = "frmEditSupplier"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Supplier"
         CType(Me.errorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
