@@ -9,16 +9,20 @@ Public Class frmEditProduct
     ''' <summary>0 = add a new product, otherwise the product being edited.</summary>
     Public Property ProductID As Integer
 
-    Private Sub frmEditProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cboCategory.Items.Clear()
-        cboCategory.Items.AddRange({"Gallon", "Bottled"})
+    ' Containers already saved under each category, read once when the form opens
+    Private ReadOnly containersByCategory As New Dictionary(Of String, List(Of String))(StringComparer.OrdinalIgnoreCase)
 
+    Private Sub frmEditProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cboStatus.Items.Clear()
         cboStatus.Items.AddRange({"Active", "Discontinued"})
 
         ' Pick from what is already in use; "Other (specify)" opens a box for a genuinely new value
-        LoadChoices(cboContainer, "containerType", {"Round", "Slim", "350mL", "500mL"})
+        LoadChoices(cboCategory, "category", {CATEGORY_GALLON, CATEGORY_BOTTLED})
         LoadChoices(cboWaterType, "waterType", {"Alkaline", "Mineral"})
+
+        ' The container list depends on the category, so it is filled by RefreshContainerChoices
+        LoadContainersByCategory()
+        RefreshContainerChoices()
         UpdateOtherBoxes()
 
         If ProductID > 0 Then
@@ -37,7 +41,7 @@ Public Class frmEditProduct
 
         Try
             connection()
-            ' columnName only ever comes from the two literals above, never from user input
+            ' columnName only ever comes from the literals in the Load event, never from user input
             sql = "SELECT DISTINCT " & columnName & " FROM tblproducts ORDER BY " & columnName
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader()
@@ -59,15 +63,94 @@ Public Class frmEditProduct
         cbo.Items.Add(OTHER_ITEM)
     End Sub
 
+    ''' <summary>Remembers which containers each category already uses (e.g. Gallon: Round, Slim).</summary>
+    Private Sub LoadContainersByCategory()
+        Try
+            connection()
+            sql = "SELECT DISTINCT category, containerType FROM tblproducts ORDER BY category, containerType"
+            cmd = New MySqlCommand(sql, cn)
+            dr = cmd.ExecuteReader()
+            While dr.Read()
+                Dim cat As String = dr(0).ToString().Trim()
+                Dim con As String = dr(1).ToString().Trim()
+                If cat = "" OrElse con = "" Then Continue While
+
+                Dim list As List(Of String) = Nothing
+                If Not containersByCategory.TryGetValue(cat, list) Then
+                    list = New List(Of String)()
+                    containersByCategory(cat) = list
+                End If
+                If Not list.Exists(Function(x) x.Equals(con, StringComparison.OrdinalIgnoreCase)) Then list.Add(con)
+            End While
+            dr.Close()
+        Catch ex As Exception
+            MsgBox("Error loading containers: " & ex.Message, MsgBoxStyle.Critical)
+        Finally
+            If cn.State = ConnectionState.Open Then cn.Close()
+        End Try
+    End Sub
+
+    ' --- Category decides which containers are offered ---------------------------
+
+    Private Sub cboCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCategory.SelectedIndexChanged
+        UpdateOtherBoxes()
+        RefreshContainerChoices()
+    End Sub
+
+    ' A brand-new category that is spelled like an existing one (e.g. "bottled") gets that category's containers
+    Private Sub txtCategoryOther_TextChanged(sender As Object, e As EventArgs) Handles txtCategoryOther.TextChanged
+        RefreshContainerChoices()
+    End Sub
+
     Private Sub cboContainer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboContainer.SelectedIndexChanged, cboWaterType.SelectedIndexChanged
         UpdateOtherBoxes()
     End Sub
 
-    ' Show the "specify" box only when "Other (specify)" is chosen
+    ''' <summary>
+    ''' Rebuilds the container list for the chosen category:
+    '''   Gallon  = Round, Slim      Bottled = 350mL, 500mL      anything else = what that category already uses.
+    ''' Containers added earlier under the same category stay in the list, and "Other (specify)" is always last
+    ''' so a container that doesn't fit can still be added. The current choice is kept if it is still valid.
+    ''' </summary>
+    Private Sub RefreshContainerChoices()
+        Dim category As String = CategoryValue()
+        Dim previous As String = cboContainer.Text
+
+        Dim values As New List(Of String)(DefaultContainersFor(category))
+        Dim used As List(Of String) = Nothing
+        If category <> "" AndAlso containersByCategory.TryGetValue(category, used) Then
+            For Each c As String In used
+                Dim candidate As String = c
+                If Not values.Exists(Function(x) x.Equals(candidate, StringComparison.OrdinalIgnoreCase)) Then values.Add(candidate)
+            Next
+        End If
+
+        cboContainer.Items.Clear()
+        If cboCategory.SelectedIndex <> -1 Then
+            For Each v As String In values
+                cboContainer.Items.Add(v)
+            Next
+            cboContainer.Items.Add(OTHER_ITEM)
+        End If
+        cboContainer.Enabled = (cboCategory.SelectedIndex <> -1)   ' choose the category first
+
+        cboContainer.SelectedIndex = cboContainer.Items.IndexOf(previous)   ' -1 when it no longer applies
+        UpdateOtherBoxes()
+    End Sub
+
+    ' Show a "specify" box only when "Other (specify)" is chosen
     Private Sub UpdateOtherBoxes()
+        Dim categoryOther As Boolean = (cboCategory.Text = OTHER_ITEM)
+        lblCategoryOther.Visible = categoryOther
+        txtCategoryOther.Visible = categoryOther
+
         Dim containerOther As Boolean = (cboContainer.Text = OTHER_ITEM)
         lblContainerOther.Visible = containerOther
         txtContainerOther.Visible = containerOther
+
+        Dim category As String = CategoryValue()
+        txtContainerOther.PlaceholderText = If(IsBottledCategory(category), "e.g. 1L or 750mL",
+                                               If(IsGallonCategory(category), "e.g. Square", "e.g. Tall"))
 
         Dim waterOther As Boolean = (cboWaterType.Text = OTHER_ITEM)
         lblWaterOther.Visible = waterOther
@@ -83,7 +166,7 @@ Public Class frmEditProduct
 
             dr = cmd.ExecuteReader()
             If dr.Read() Then
-                SelectOrAdd(cboCategory, dr("category").ToString())
+                SelectOrAdd(cboCategory, dr("category").ToString())      ' also rebuilds the container list
                 SelectOrAdd(cboContainer, dr("containerType").ToString())
                 SelectOrAdd(cboWaterType, dr("waterType").ToString())
                 txtPrice.Text = CDec(dr("unitPrice")).ToString("0.00")
@@ -110,7 +193,7 @@ Public Class frmEditProduct
                                  System.Globalization.CultureInfo.CurrentCulture, price)
     End Function
 
-    ' --- The container / water type that will actually be saved ---------------
+    ' --- The category / container / water type that will actually be saved ---------------
 
     Private Function Clean(text As String) As String
         Return Regex.Replace(text.Trim(), "\s+", " ")
@@ -130,6 +213,21 @@ Public Class frmEditProduct
             End If
         Next
         Return typed
+    End Function
+
+    ''' <summary>The category that will be saved ("" while nothing is chosen or typed yet).</summary>
+    Private Function CategoryValue() As String
+        If cboCategory.SelectedIndex = -1 Then Return ""
+        Return ChosenValue(cboCategory, txtCategoryOther)
+    End Function
+
+    ''' <summary>The container that will be saved. Bottle sizes are always kept in mL ("1L" is saved as "1000mL").</summary>
+    Private Function FinalContainer() As String
+        Dim value As String = ChosenValue(cboContainer, txtContainerOther)
+
+        Dim size As String = ""
+        If IsBottledCategory(CategoryValue()) AndAlso TryParseVolume(value, size) Then Return size
+        Return value
     End Function
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -197,12 +295,20 @@ Public Class frmEditProduct
     Private Function ValidateInputs() As Boolean
         Dim isValid As Boolean = True
 
-        If cboCategory.SelectedIndex = -1 Then
-            errorProvider1.SetError(cboCategory, "Select a category.")
+        If Not ValidateChoice(cboCategory, txtCategoryOther, "category") Then isValid = False
+
+        If Not ValidateChoice(cboContainer, txtContainerOther, "container") Then
             isValid = False
+        Else
+            ' The container has to suit the category (no mL bottle under Gallon, only mL sizes under Bottled)
+            Dim problem As String = ContainerProblem(CategoryValue(), FinalContainer())
+            If problem <> "" Then
+                Dim target As Control = If(cboContainer.Text = OTHER_ITEM, CType(txtContainerOther, Control), CType(cboContainer, Control))
+                errorProvider1.SetError(target, problem)
+                isValid = False
+            End If
         End If
 
-        If Not ValidateChoice(cboContainer, txtContainerOther, "container") Then isValid = False
         If Not ValidateChoice(cboWaterType, txtWaterOther, "water type") Then isValid = False
 
         If cboStatus.SelectedIndex = -1 Then
@@ -232,8 +338,8 @@ Public Class frmEditProduct
                   "WHERE category = @category AND containerType = @container AND waterType = @water " &
                   "AND productId <> @id"
             cmd = New MySqlCommand(sql, cn)
-            cmd.Parameters.AddWithValue("@category", cboCategory.Text)
-            cmd.Parameters.AddWithValue("@container", ChosenValue(cboContainer, txtContainerOther))
+            cmd.Parameters.AddWithValue("@category", CategoryValue())
+            cmd.Parameters.AddWithValue("@container", FinalContainer())
             cmd.Parameters.AddWithValue("@water", ChosenValue(cboWaterType, txtWaterOther))
             cmd.Parameters.AddWithValue("@id", ProductID)
             Return CLng(cmd.ExecuteScalar()) > 0
@@ -261,8 +367,8 @@ Public Class frmEditProduct
             End If
 
             cmd = New MySqlCommand(sql, cn)
-            cmd.Parameters.AddWithValue("@category", cboCategory.Text)
-            cmd.Parameters.AddWithValue("@container", ChosenValue(cboContainer, txtContainerOther))
+            cmd.Parameters.AddWithValue("@category", CategoryValue())
+            cmd.Parameters.AddWithValue("@container", FinalContainer())
             cmd.Parameters.AddWithValue("@water", ChosenValue(cboWaterType, txtWaterOther))
             cmd.Parameters.AddWithValue("@price", price)
             cmd.Parameters.AddWithValue("@status", cboStatus.Text)

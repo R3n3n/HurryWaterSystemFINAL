@@ -51,10 +51,7 @@ Public Class frmAddSalesOrder
         dt.Load(cmd.ExecuteReader())
         cn.Close()
 
-        cboCustomer.DataSource = dt
-        cboCustomer.DisplayMember = "customerName"
-        cboCustomer.ValueMember = "customerId"
-        cboCustomer.SelectedIndex = -1
+        SearchableCombo.Attach(cboCustomer, dt, "customerName", "customerId")   ' type to search
     End Sub
 
     Private Sub LoadProductsIntoAllRows()
@@ -216,6 +213,7 @@ Public Class frmAddSalesOrder
     Private Function ValidateOrder() As Boolean
         Dim isValid As Boolean = True
 
+        SearchableCombo.Commit(cboCustomer)   ' turn typed text into a real selection first
         If cboCustomer.SelectedIndex = -1 Then
             errorProvider1.SetError(cboCustomer, "Select a customer.")
             isValid = False

@@ -333,6 +333,8 @@
     </Compile>
     <Compile Include="modCustomerRules.vb" />
     <Compile Include="modOrderRules.vb" />
+    <Compile Include="modProductRules.vb" />
+    <Compile Include="modSearchableCombo.vb" />
     <Compile Include="modSchemaUpdates.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

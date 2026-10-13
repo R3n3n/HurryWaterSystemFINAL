@@ -27,6 +27,8 @@ Partial Class frmEditProduct
         Me.lblFormHint = New System.Windows.Forms.Label()
         Me.lblCategory = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.cboCategory = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.lblCategoryOther = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.txtCategoryOther = New Guna.UI2.WinForms.Guna2TextBox()
         Me.lblContainer = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.cboContainer = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.lblContainerOther = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -92,6 +94,36 @@ Partial Class frmEditProduct
         Me.cboCategory.Name = "cboCategory"
         Me.cboCategory.TabIndex = 3
         '
+        'lblCategoryOther
+        '
+        Me.lblCategoryOther.BackColor = System.Drawing.Color.Transparent
+        Me.lblCategoryOther.Font = New System.Drawing.Font("Segoe UI", 17.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCategoryOther.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.lblCategoryOther.Location = New System.Drawing.Point(600, 150)
+        Me.lblCategoryOther.Size = New System.Drawing.Size(560, 34)
+        Me.lblCategoryOther.Text = "SPECIFY NEW CATEGORY"
+        Me.lblCategoryOther.Name = "lblCategoryOther"
+        Me.lblCategoryOther.TabIndex = 4
+        '
+        'txtCategoryOther
+        '
+        Me.txtCategoryOther.BorderRadius = 18
+        Me.txtCategoryOther.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCategoryOther.DefaultText = ""
+        Me.txtCategoryOther.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtCategoryOther.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtCategoryOther.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCategoryOther.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCategoryOther.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCategoryOther.Font = New System.Drawing.Font("Segoe UI", 13.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCategoryOther.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCategoryOther.Location = New System.Drawing.Point(600, 192)
+        Me.txtCategoryOther.PlaceholderText = ""
+        Me.txtCategoryOther.SelectedText = ""
+        Me.txtCategoryOther.Size = New System.Drawing.Size(420, 53)
+        Me.txtCategoryOther.Name = "txtCategoryOther"
+        Me.txtCategoryOther.TabIndex = 5
+        '
         'lblContainer
         '
         Me.lblContainer.BackColor = System.Drawing.Color.Transparent
@@ -101,7 +133,7 @@ Partial Class frmEditProduct
         Me.lblContainer.Size = New System.Drawing.Size(560, 34)
         Me.lblContainer.Text = "CONTAINER"
         Me.lblContainer.Name = "lblContainer"
-        Me.lblContainer.TabIndex = 4
+        Me.lblContainer.TabIndex = 6
         '
         'cboContainer
         '
@@ -117,7 +149,7 @@ Partial Class frmEditProduct
         Me.cboContainer.Location = New System.Drawing.Point(37, 312)
         Me.cboContainer.Size = New System.Drawing.Size(537, 53)
         Me.cboContainer.Name = "cboContainer"
-        Me.cboContainer.TabIndex = 5
+        Me.cboContainer.TabIndex = 7
         '
         'lblContainerOther
         '
@@ -128,7 +160,7 @@ Partial Class frmEditProduct
         Me.lblContainerOther.Size = New System.Drawing.Size(560, 34)
         Me.lblContainerOther.Text = "SPECIFY NEW CONTAINER"
         Me.lblContainerOther.Name = "lblContainerOther"
-        Me.lblContainerOther.TabIndex = 6
+        Me.lblContainerOther.TabIndex = 8
         '
         'txtContainerOther
         '
@@ -147,7 +179,7 @@ Partial Class frmEditProduct
         Me.txtContainerOther.SelectedText = ""
         Me.txtContainerOther.Size = New System.Drawing.Size(420, 53)
         Me.txtContainerOther.Name = "txtContainerOther"
-        Me.txtContainerOther.TabIndex = 7
+        Me.txtContainerOther.TabIndex = 9
         '
         'lblWater
         '
@@ -158,7 +190,7 @@ Partial Class frmEditProduct
         Me.lblWater.Size = New System.Drawing.Size(560, 34)
         Me.lblWater.Text = "WATER TYPE"
         Me.lblWater.Name = "lblWater"
-        Me.lblWater.TabIndex = 8
+        Me.lblWater.TabIndex = 10
         '
         'cboWaterType
         '
@@ -174,7 +206,7 @@ Partial Class frmEditProduct
         Me.cboWaterType.Location = New System.Drawing.Point(37, 432)
         Me.cboWaterType.Size = New System.Drawing.Size(537, 53)
         Me.cboWaterType.Name = "cboWaterType"
-        Me.cboWaterType.TabIndex = 9
+        Me.cboWaterType.TabIndex = 11
         '
         'lblWaterOther
         '
@@ -185,7 +217,7 @@ Partial Class frmEditProduct
         Me.lblWaterOther.Size = New System.Drawing.Size(560, 34)
         Me.lblWaterOther.Text = "SPECIFY NEW WATER TYPE"
         Me.lblWaterOther.Name = "lblWaterOther"
-        Me.lblWaterOther.TabIndex = 10
+        Me.lblWaterOther.TabIndex = 12
         '
         'txtWaterOther
         '
@@ -204,7 +236,7 @@ Partial Class frmEditProduct
         Me.txtWaterOther.SelectedText = ""
         Me.txtWaterOther.Size = New System.Drawing.Size(420, 53)
         Me.txtWaterOther.Name = "txtWaterOther"
-        Me.txtWaterOther.TabIndex = 11
+        Me.txtWaterOther.TabIndex = 13
         '
         'lblPrice
         '
@@ -215,7 +247,7 @@ Partial Class frmEditProduct
         Me.lblPrice.Size = New System.Drawing.Size(560, 34)
         Me.lblPrice.Text = "UNIT PRICE (₱)"
         Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.TabIndex = 12
+        Me.lblPrice.TabIndex = 14
         '
         'txtPrice
         '
@@ -234,7 +266,7 @@ Partial Class frmEditProduct
         Me.txtPrice.SelectedText = ""
         Me.txtPrice.Size = New System.Drawing.Size(537, 53)
         Me.txtPrice.Name = "txtPrice"
-        Me.txtPrice.TabIndex = 13
+        Me.txtPrice.TabIndex = 15
         '
         'lblStatus
         '
@@ -245,7 +277,7 @@ Partial Class frmEditProduct
         Me.lblStatus.Size = New System.Drawing.Size(560, 34)
         Me.lblStatus.Text = "STATUS"
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.TabIndex = 14
+        Me.lblStatus.TabIndex = 16
         '
         'cboStatus
         '
@@ -261,7 +293,7 @@ Partial Class frmEditProduct
         Me.cboStatus.Location = New System.Drawing.Point(37, 672)
         Me.cboStatus.Size = New System.Drawing.Size(537, 53)
         Me.cboStatus.Name = "cboStatus"
-        Me.cboStatus.TabIndex = 15
+        Me.cboStatus.TabIndex = 17
         '
         'btnCancel
         '
@@ -277,7 +309,7 @@ Partial Class frmEditProduct
         Me.btnCancel.Size = New System.Drawing.Size(177, 54)
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.TabIndex = 16
+        Me.btnCancel.TabIndex = 18
         '
         'btnSave
         '
@@ -295,7 +327,7 @@ Partial Class frmEditProduct
         Me.btnSave.Size = New System.Drawing.Size(177, 54)
         Me.btnSave.Text = "Save Product"
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.TabIndex = 17
+        Me.btnSave.TabIndex = 19
         '
         'errorProvider1
         '
@@ -321,6 +353,8 @@ Partial Class frmEditProduct
         Me.Controls.Add(Me.lblContainerOther)
         Me.Controls.Add(Me.cboContainer)
         Me.Controls.Add(Me.lblContainer)
+        Me.Controls.Add(Me.txtCategoryOther)
+        Me.Controls.Add(Me.lblCategoryOther)
         Me.Controls.Add(Me.cboCategory)
         Me.Controls.Add(Me.lblCategory)
         Me.Controls.Add(Me.lblFormHint)
@@ -341,6 +375,8 @@ Partial Class frmEditProduct
     Friend WithEvents lblFormHint As Label
     Friend WithEvents lblCategory As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents cboCategory As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents lblCategoryOther As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents txtCategoryOther As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents lblContainer As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents cboContainer As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents lblContainerOther As Guna.UI2.WinForms.Guna2HtmlLabel

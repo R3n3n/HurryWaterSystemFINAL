@@ -24,10 +24,7 @@ Public Class frmAddBorrowRecord
         dt.Load(cmd.ExecuteReader())
         cn.Close()
 
-        cboCustomer.DataSource = dt
-        cboCustomer.DisplayMember = "customerName"
-        cboCustomer.ValueMember = "customerId"
-        cboCustomer.SelectedIndex = -1
+        SearchableCombo.Attach(cboCustomer, dt, "customerName", "customerId")   ' type to search
     End Sub
 
     Private Sub txtDispenserRef_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDispenserRef.KeyPress
@@ -73,6 +70,7 @@ Public Class frmAddBorrowRecord
     Private Function ValidateInputs() As Boolean
         Dim isValid As Boolean = True
 
+        SearchableCombo.Commit(cboCustomer)   ' turn typed text into a real selection first
         If cboCustomer.SelectedIndex = -1 Then
             errorProvider1.SetError(cboCustomer, "Select a customer.")
             isValid = False

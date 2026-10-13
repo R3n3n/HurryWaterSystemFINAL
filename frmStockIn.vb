@@ -25,10 +25,7 @@ Public Class frmStockIn
             itemsTable = New DataTable()
             itemsTable.Load(cmd.ExecuteReader())
 
-            cboItem.DataSource = itemsTable
-            cboItem.DisplayMember = "itemName"
-            cboItem.ValueMember = "itemId"
-            cboItem.SelectedIndex = -1
+            SearchableCombo.Attach(cboItem, itemsTable, "itemName", "itemId")   ' type to search
         Catch ex As Exception
             MsgBox("Error loading items: " & ex.Message, MsgBoxStyle.Critical)
         Finally
@@ -118,6 +115,7 @@ Public Class frmStockIn
             Return
         End If
 
+        SearchableCombo.Commit(cboItem)   ' turn typed text into a real selection first
         Dim row As DataRowView = TryCast(cboItem.SelectedItem, DataRowView)
         If row Is Nothing Then
             MsgBox("Select an item.", MsgBoxStyle.Exclamation, "Validation error")
