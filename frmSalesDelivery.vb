@@ -201,8 +201,14 @@ Public Class frmSalesDelivery
         OpenUpdateStatusModal()
     End Sub
 
+    ' Double-click shows what was ordered (item, quantity, price). Use the Update Status button to change statuses.
     Private Sub lsvOrders_DoubleClick(sender As Object, e As EventArgs) Handles lsvOrders.DoubleClick
-        OpenUpdateStatusModal()
+        If lsvOrders.SelectedItems.Count = 0 Then Return
+
+        Dim detailsForm As New frmOrderDetails()
+        detailsForm.OrderId = CInt(lsvOrders.SelectedItems(0).Tag)
+        detailsForm.ShowDialog()
+        detailsForm.Dispose()
     End Sub
 
     Private Sub OpenUpdateStatusModal()
@@ -267,4 +273,9 @@ Public Class frmSalesDelivery
 
         LoadOrderList()
     End Sub
+
+    Private Sub btnExportOrders_Click(sender As Object, e As EventArgs) Handles btnExportOrders.Click
+        ExportListViewToCsv(lsvOrders, "sales_orders")
+    End Sub
+
 End Class

@@ -291,4 +291,8 @@ Public Class frmReports
         End Using
     End Sub
 
+    Private Sub btnExportLowStock_Click(sender As Object, e As EventArgs) Handles btnExportLowStock.Click
+        ExportListViewToCsv(lsvLowStock, "low_stock")
+    End Sub
+
 End Class

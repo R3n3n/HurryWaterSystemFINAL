@@ -315,4 +315,8 @@ Public Class frmSetup
         LoadCurrent()
     End Sub
 
+    Private Sub btnExportData_Click(sender As Object, e As EventArgs) Handles btnExportData.Click
+        ExportListViewToCsv(lsvData, "setup_" & currentTab.ToString().ToLower())
+    End Sub
+
 End Class

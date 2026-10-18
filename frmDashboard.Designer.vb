@@ -39,10 +39,12 @@ Partial Class frmDashboard
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lsvDueToday = New System.Windows.Forms.ListView()
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnExportDueToday = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lsvLowStock = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnExportLowStock = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Guna2GradientPanel1.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -59,7 +61,7 @@ Partial Class frmDashboard
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(48, 46)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(294, 86)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(291, 74)
         Me.Guna2HtmlLabel1.TabIndex = 0
         Me.Guna2HtmlLabel1.Text = "Dashboard"
         '
@@ -70,7 +72,7 @@ Partial Class frmDashboard
         Me.lblDate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblDate.Location = New System.Drawing.Point(50, 138)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(241, 41)
+        Me.lblDate.Size = New System.Drawing.Size(245, 38)
         Me.lblDate.TabIndex = 16
         Me.lblDate.Text = "# orders this week"
         '
@@ -94,7 +96,7 @@ Partial Class frmDashboard
         Me.lblTodaySales.ForeColor = System.Drawing.Color.White
         Me.lblTodaySales.Location = New System.Drawing.Point(29, 81)
         Me.lblTodaySales.Name = "lblTodaySales"
-        Me.lblTodaySales.Size = New System.Drawing.Size(48, 61)
+        Me.lblTodaySales.Size = New System.Drawing.Size(47, 54)
         Me.lblTodaySales.TabIndex = 38
         Me.lblTodaySales.Text = "0"
         '
@@ -106,7 +108,7 @@ Partial Class frmDashboard
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(34, 28)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(184, 35)
+        Me.Label4.Size = New System.Drawing.Size(188, 32)
         Me.Label4.TabIndex = 35
         Me.Label4.Text = "TODAY'S SALES"
         '
@@ -129,7 +131,7 @@ Partial Class frmDashboard
         Me.lblUnpaidBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblUnpaidBalance.Location = New System.Drawing.Point(25, 81)
         Me.lblUnpaidBalance.Name = "lblUnpaidBalance"
-        Me.lblUnpaidBalance.Size = New System.Drawing.Size(48, 61)
+        Me.lblUnpaidBalance.Size = New System.Drawing.Size(47, 54)
         Me.lblUnpaidBalance.TabIndex = 37
         Me.lblUnpaidBalance.Text = "0"
         '
@@ -141,7 +143,7 @@ Partial Class frmDashboard
         Me.Label3.ForeColor = System.Drawing.Color.Gray
         Me.Label3.Location = New System.Drawing.Point(29, 28)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(217, 35)
+        Me.Label3.Size = New System.Drawing.Size(223, 32)
         Me.Label3.TabIndex = 35
         Me.Label3.Text = "UNPAID BALANCE"
         '
@@ -164,7 +166,7 @@ Partial Class frmDashboard
         Me.lblAwaitingDelivery.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblAwaitingDelivery.Location = New System.Drawing.Point(20, 81)
         Me.lblAwaitingDelivery.Name = "lblAwaitingDelivery"
-        Me.lblAwaitingDelivery.Size = New System.Drawing.Size(48, 61)
+        Me.lblAwaitingDelivery.Size = New System.Drawing.Size(47, 54)
         Me.lblAwaitingDelivery.TabIndex = 36
         Me.lblAwaitingDelivery.Text = "0"
         '
@@ -176,7 +178,7 @@ Partial Class frmDashboard
         Me.Label1.ForeColor = System.Drawing.Color.Gray
         Me.Label1.Location = New System.Drawing.Point(25, 28)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(244, 35)
+        Me.Label1.Size = New System.Drawing.Size(254, 32)
         Me.Label1.TabIndex = 24
         Me.Label1.Text = "AWAITING DELIVERY"
         '
@@ -199,7 +201,7 @@ Partial Class frmDashboard
         Me.lblOverdueDispensers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblOverdueDispensers.Location = New System.Drawing.Point(20, 81)
         Me.lblOverdueDispensers.Name = "lblOverdueDispensers"
-        Me.lblOverdueDispensers.Size = New System.Drawing.Size(48, 61)
+        Me.lblOverdueDispensers.Size = New System.Drawing.Size(47, 54)
         Me.lblOverdueDispensers.TabIndex = 35
         Me.lblOverdueDispensers.Text = "0"
         '
@@ -211,7 +213,7 @@ Partial Class frmDashboard
         Me.Label2.ForeColor = System.Drawing.Color.Gray
         Me.Label2.Location = New System.Drawing.Point(25, 28)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(269, 35)
+        Me.Label2.Size = New System.Drawing.Size(273, 32)
         Me.Label2.TabIndex = 23
         Me.Label2.Text = "OVERDUE DISPENSERS"
         '
@@ -220,6 +222,7 @@ Partial Class frmDashboard
         Me.Guna2Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel5.BorderRadius = 18
         Me.Guna2Panel5.Controls.Add(Me.lsvDueToday)
+        Me.Guna2Panel5.Controls.Add(Me.btnExportDueToday)
         Me.Guna2Panel5.Controls.Add(Me.Label5)
         Me.Guna2Panel5.FillColor = System.Drawing.Color.White
         Me.Guna2Panel5.Location = New System.Drawing.Point(48, 479)
@@ -242,6 +245,24 @@ Partial Class frmDashboard
         '
         Me.ColumnHeader2.Text = "Customer"
         '
+        'btnExportDueToday
+        '
+        Me.btnExportDueToday.BorderRadius = 16
+        Me.btnExportDueToday.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportDueToday.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportDueToday.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportDueToday.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportDueToday.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportDueToday.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportDueToday.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportDueToday.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportDueToday.ForeColor = System.Drawing.Color.White
+        Me.btnExportDueToday.Location = New System.Drawing.Point(568, 20)
+        Me.btnExportDueToday.Name = "btnExportDueToday"
+        Me.btnExportDueToday.Size = New System.Drawing.Size(190, 50)
+        Me.btnExportDueToday.TabIndex = 90
+        Me.btnExportDueToday.Text = "Export"
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -250,7 +271,7 @@ Partial Class frmDashboard
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(29, 28)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(297, 35)
+        Me.Label5.Size = New System.Drawing.Size(305, 32)
         Me.Label5.TabIndex = 35
         Me.Label5.Text = "Due for Pickup / Delivery"
         '
@@ -259,6 +280,7 @@ Partial Class frmDashboard
         Me.Guna2Panel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel4.BorderRadius = 18
         Me.Guna2Panel4.Controls.Add(Me.lsvLowStock)
+        Me.Guna2Panel4.Controls.Add(Me.btnExportLowStock)
         Me.Guna2Panel4.Controls.Add(Me.Label6)
         Me.Guna2Panel4.FillColor = System.Drawing.Color.White
         Me.Guna2Panel4.Location = New System.Drawing.Point(899, 479)
@@ -281,6 +303,24 @@ Partial Class frmDashboard
         '
         Me.ColumnHeader1.Text = "Customer"
         '
+        'btnExportLowStock
+        '
+        Me.btnExportLowStock.BorderRadius = 16
+        Me.btnExportLowStock.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportLowStock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportLowStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportLowStock.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportLowStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportLowStock.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportLowStock.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportLowStock.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportLowStock.ForeColor = System.Drawing.Color.White
+        Me.btnExportLowStock.Location = New System.Drawing.Point(347, 20)
+        Me.btnExportLowStock.Name = "btnExportLowStock"
+        Me.btnExportLowStock.Size = New System.Drawing.Size(190, 50)
+        Me.btnExportLowStock.TabIndex = 90
+        Me.btnExportLowStock.Text = "Export"
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -289,7 +329,7 @@ Partial Class frmDashboard
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(29, 28)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(198, 35)
+        Me.Label6.Size = New System.Drawing.Size(201, 32)
         Me.Label6.TabIndex = 35
         Me.Label6.Text = "Low-Stock Items"
         '
@@ -298,7 +338,7 @@ Partial Class frmDashboard
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1535, 1082)
+        Me.ClientSize = New System.Drawing.Size(1535, 1061)
         Me.Controls.Add(Me.Guna2Panel4)
         Me.Controls.Add(Me.Guna2Panel5)
         Me.Controls.Add(Me.Guna2GradientPanel1)
@@ -342,10 +382,12 @@ Partial Class frmDashboard
     Friend WithEvents Label2 As Label
     Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents lsvDueToday As ListView
+    Friend WithEvents btnExportDueToday As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents Label5 As Label
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents lsvLowStock As ListView
+    Friend WithEvents btnExportLowStock As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents Label6 As Label
 End Class

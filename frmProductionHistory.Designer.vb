@@ -44,6 +44,7 @@ Partial Class frmProductionHistory
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lsvLogs = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnExportLogs = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -298,13 +299,31 @@ Partial Class frmProductionHistory
         Me.lsvLogs.HideSelection = False
         Me.lsvLogs.Location = New System.Drawing.Point(41, 659)
         Me.lsvLogs.Name = "lsvLogs"
-        Me.lsvLogs.Size = New System.Drawing.Size(1458, 355)
+        Me.lsvLogs.Size = New System.Drawing.Size(1458, 269)
         Me.lsvLogs.TabIndex = 59
         Me.lsvLogs.UseCompatibleStateImageBehavior = False
         '
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Customer"
+        '
+        'btnExportLogs
+        '
+        Me.btnExportLogs.BorderRadius = 20
+        Me.btnExportLogs.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportLogs.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportLogs.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportLogs.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportLogs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportLogs.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportLogs.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportLogs.Font = New System.Drawing.Font("Segoe UI", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportLogs.ForeColor = System.Drawing.Color.White
+        Me.btnExportLogs.Location = New System.Drawing.Point(1279, 960)
+        Me.btnExportLogs.Name = "btnExportLogs"
+        Me.btnExportLogs.Size = New System.Drawing.Size(220, 66)
+        Me.btnExportLogs.TabIndex = 90
+        Me.btnExportLogs.Text = "Export"
         '
         'frmProductionHistory
         '
@@ -313,6 +332,7 @@ Partial Class frmProductionHistory
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1535, 1061)
         Me.Controls.Add(Me.lsvLogs)
+        Me.Controls.Add(Me.btnExportLogs)
         Me.Controls.Add(Me.Guna2Panel4)
         Me.Controls.Add(Me.Guna2Panel3)
         Me.Controls.Add(Me.Guna2Panel1)
@@ -361,5 +381,6 @@ Partial Class frmProductionHistory
     Friend WithEvents lblTotal500 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents lsvLogs As ListView
+    Friend WithEvents btnExportLogs As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents ColumnHeader1 As ColumnHeader
 End Class

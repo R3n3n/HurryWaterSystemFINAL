@@ -86,4 +86,8 @@ Public Class frmInventory
         End Using
     End Sub
 
+    Private Sub btnExportInventory_Click(sender As Object, e As EventArgs) Handles btnExportInventory.Click
+        ExportListViewToCsv(lsvInventory, "inventory")
+    End Sub
+
 End Class

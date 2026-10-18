@@ -117,4 +117,9 @@ Public Class frmUsers
 
         editForm.Dispose()
     End Sub
+
+    Private Sub btnExportUsers_Click(sender As Object, e As EventArgs) Handles btnExportUsers.Click
+        ExportListViewToCsv(lsvUsers, "users")
+    End Sub
+
 End Class

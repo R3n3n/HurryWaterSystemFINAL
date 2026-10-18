@@ -45,6 +45,7 @@ Partial Class frmReports
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lsvLowStock = New System.Windows.Forms.ListView()
+        Me.btnExportLowStock = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lsvCustomerSummary = New System.Windows.Forms.ListView()
@@ -289,12 +290,31 @@ Partial Class frmReports
         Me.Guna2Panel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel5.BorderRadius = 18
         Me.Guna2Panel5.Controls.Add(Me.lsvLowStock)
+        Me.Guna2Panel5.Controls.Add(Me.btnExportLowStock)
         Me.Guna2Panel5.Controls.Add(Me.Label5)
         Me.Guna2Panel5.FillColor = System.Drawing.Color.White
         Me.Guna2Panel5.Location = New System.Drawing.Point(833, 428)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.Size = New System.Drawing.Size(645, 304)
         Me.Guna2Panel5.TabIndex = 39
+        '
+        'btnExportLowStock
+        '
+        Me.btnExportLowStock.BorderRadius = 16
+        Me.btnExportLowStock.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportLowStock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportLowStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportLowStock.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportLowStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportLowStock.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportLowStock.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportLowStock.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportLowStock.ForeColor = System.Drawing.Color.White
+        Me.btnExportLowStock.Location = New System.Drawing.Point(419, 14)
+        Me.btnExportLowStock.Name = "btnExportLowStock"
+        Me.btnExportLowStock.Size = New System.Drawing.Size(190, 50)
+        Me.btnExportLowStock.TabIndex = 90
+        Me.btnExportLowStock.Text = "Export"
         '
         'lsvLowStock
         '
@@ -416,6 +436,7 @@ Partial Class frmReports
     Friend WithEvents lsvCustomerSummary As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents lsvLowStock As ListView
+    Friend WithEvents btnExportLowStock As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents btnAnnualReport As Guna.UI2.WinForms.Guna2GradientButton
 End Class

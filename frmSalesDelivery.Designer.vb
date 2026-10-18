@@ -29,6 +29,7 @@ Partial Class frmSalesDelivery
         Me.cboFilterPickup = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.cboFilterPayment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.lsvOrders = New System.Windows.Forms.ListView()
+        Me.btnExportOrders = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnUpdateStatus = New Guna.UI2.WinForms.Guna2Button()
         Me.btnDeleteOrder = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.cboFilterWeek = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -131,9 +132,27 @@ Partial Class frmSalesDelivery
         Me.lsvOrders.HideSelection = False
         Me.lsvOrders.Location = New System.Drawing.Point(56, 342)
         Me.lsvOrders.Name = "lsvOrders"
-        Me.lsvOrders.Size = New System.Drawing.Size(1420, 677)
+        Me.lsvOrders.Size = New System.Drawing.Size(1420, 591)
         Me.lsvOrders.TabIndex = 20
         Me.lsvOrders.UseCompatibleStateImageBehavior = False
+        '
+        'btnExportOrders
+        '
+        Me.btnExportOrders.BorderRadius = 20
+        Me.btnExportOrders.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportOrders.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportOrders.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportOrders.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportOrders.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportOrders.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportOrders.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportOrders.Font = New System.Drawing.Font("Segoe UI", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportOrders.ForeColor = System.Drawing.Color.White
+        Me.btnExportOrders.Location = New System.Drawing.Point(1256, 966)
+        Me.btnExportOrders.Name = "btnExportOrders"
+        Me.btnExportOrders.Size = New System.Drawing.Size(220, 66)
+        Me.btnExportOrders.TabIndex = 90
+        Me.btnExportOrders.Text = "Export"
         '
         'btnUpdateStatus
         '
@@ -197,6 +216,7 @@ Partial Class frmSalesDelivery
         Me.Controls.Add(Me.btnDeleteOrder)
         Me.Controls.Add(Me.btnUpdateStatus)
         Me.Controls.Add(Me.lsvOrders)
+        Me.Controls.Add(Me.btnExportOrders)
         Me.Controls.Add(Me.cboFilterPayment)
         Me.Controls.Add(Me.cboFilterPickup)
         Me.Controls.Add(Me.txtSearch)
@@ -217,6 +237,7 @@ Partial Class frmSalesDelivery
     Friend WithEvents cboFilterPickup As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents cboFilterPayment As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents lsvOrders As ListView
+    Friend WithEvents btnExportOrders As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents btnUpdateStatus As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnDeleteOrder As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents cboFilterWeek As Guna.UI2.WinForms.Guna2ComboBox

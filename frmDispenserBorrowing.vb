@@ -118,4 +118,8 @@ Public Class frmDispenserBorrowing
         End Try
     End Sub
 
+    Private Sub btnExportBorrowing_Click(sender As Object, e As EventArgs) Handles btnExportBorrowing.Click
+        ExportListViewToCsv(lsvBorrowing, "dispenser_borrowing")
+    End Sub
+
 End Class

@@ -211,4 +211,9 @@ Public Class frmCustomers
             If cn.State = ConnectionState.Open Then cn.Close()
         End Try
     End Sub
+
+    Private Sub btnExportCustomers_Click(sender As Object, e As EventArgs) Handles btnExportCustomers.Click
+        ExportListViewToCsv(lsvCustomers, "customers")
+    End Sub
+
 End Class

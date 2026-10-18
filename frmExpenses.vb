@@ -167,4 +167,9 @@ Public Class frmExpenses
 
         RefreshAll()
     End Sub
+
+    Private Sub btnExportExpenses_Click(sender As Object, e As EventArgs) Handles btnExportExpenses.Click
+        ExportListViewToCsv(lsvExpenses, "expenses")
+    End Sub
+
 End Class

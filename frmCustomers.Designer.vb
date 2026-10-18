@@ -28,6 +28,7 @@ Partial Class frmCustomers
         Me.lblActiveAccounts = New System.Windows.Forms.Label()
         Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.lsvCustomers = New System.Windows.Forms.ListView()
+        Me.btnExportCustomers = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Guna2AnimateWindow1 = New Guna.UI2.WinForms.Guna2AnimateWindow(Me.components)
         Me.btnEditCustomer = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.SuspendLayout()
@@ -97,9 +98,27 @@ Partial Class frmCustomers
         Me.lsvCustomers.HideSelection = False
         Me.lsvCustomers.Location = New System.Drawing.Point(69, 343)
         Me.lsvCustomers.Name = "lsvCustomers"
-        Me.lsvCustomers.Size = New System.Drawing.Size(1384, 677)
+        Me.lsvCustomers.Size = New System.Drawing.Size(1384, 591)
         Me.lsvCustomers.TabIndex = 16
         Me.lsvCustomers.UseCompatibleStateImageBehavior = False
+        '
+        'btnExportCustomers
+        '
+        Me.btnExportCustomers.BorderRadius = 20
+        Me.btnExportCustomers.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportCustomers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportCustomers.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportCustomers.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportCustomers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportCustomers.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportCustomers.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportCustomers.Font = New System.Drawing.Font("Segoe UI", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportCustomers.ForeColor = System.Drawing.Color.White
+        Me.btnExportCustomers.Location = New System.Drawing.Point(1233, 961)
+        Me.btnExportCustomers.Name = "btnExportCustomers"
+        Me.btnExportCustomers.Size = New System.Drawing.Size(220, 66)
+        Me.btnExportCustomers.TabIndex = 90
+        Me.btnExportCustomers.Text = "Export"
         '
         'btnEditCustomer
         '
@@ -127,6 +146,7 @@ Partial Class frmCustomers
         Me.ClientSize = New System.Drawing.Size(1535, 1061)
         Me.Controls.Add(Me.btnEditCustomer)
         Me.Controls.Add(Me.lsvCustomers)
+        Me.Controls.Add(Me.btnExportCustomers)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.lblActiveAccounts)
         Me.Controls.Add(Me.btnAddCustomer)
@@ -143,6 +163,7 @@ Partial Class frmCustomers
     Friend WithEvents lblActiveAccounts As Label
     Friend WithEvents txtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents lsvCustomers As ListView
+    Friend WithEvents btnExportCustomers As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents Guna2AnimateWindow1 As Guna.UI2.WinForms.Guna2AnimateWindow
     Friend WithEvents btnEditCustomer As Guna.UI2.WinForms.Guna2GradientButton
 End Class

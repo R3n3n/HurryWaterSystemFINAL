@@ -28,6 +28,7 @@ Partial Class frmUsers
         Me.btnToggleStatus = New Guna.UI2.WinForms.Guna2Button()
         Me.lsvUsers = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnExportUsers = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
         Me.SuspendLayout()
         '
@@ -96,13 +97,31 @@ Partial Class frmUsers
         Me.lsvUsers.HideSelection = False
         Me.lsvUsers.Location = New System.Drawing.Point(50, 246)
         Me.lsvUsers.Name = "lsvUsers"
-        Me.lsvUsers.Size = New System.Drawing.Size(1437, 781)
+        Me.lsvUsers.Size = New System.Drawing.Size(1437, 695)
         Me.lsvUsers.TabIndex = 59
         Me.lsvUsers.UseCompatibleStateImageBehavior = False
         '
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Customer"
+        '
+        'btnExportUsers
+        '
+        Me.btnExportUsers.BorderRadius = 20
+        Me.btnExportUsers.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportUsers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportUsers.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportUsers.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportUsers.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportUsers.Font = New System.Drawing.Font("Segoe UI", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportUsers.ForeColor = System.Drawing.Color.White
+        Me.btnExportUsers.Location = New System.Drawing.Point(1267, 966)
+        Me.btnExportUsers.Name = "btnExportUsers"
+        Me.btnExportUsers.Size = New System.Drawing.Size(220, 66)
+        Me.btnExportUsers.TabIndex = 90
+        Me.btnExportUsers.Text = "Export"
         '
         'btnEdit
         '
@@ -130,6 +149,7 @@ Partial Class frmUsers
         Me.ClientSize = New System.Drawing.Size(1535, 1061)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.lsvUsers)
+        Me.Controls.Add(Me.btnExportUsers)
         Me.Controls.Add(Me.btnToggleStatus)
         Me.Controls.Add(Me.btnAddUser)
         Me.Controls.Add(Me.Label1)
@@ -146,6 +166,7 @@ Partial Class frmUsers
     Friend WithEvents btnAddUser As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents btnToggleStatus As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lsvUsers As ListView
+    Friend WithEvents btnExportUsers As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
 End Class

@@ -182,4 +182,8 @@ Public Class frmAnnualReport
         Me.DialogResult = DialogResult.Cancel
     End Sub
 
+    Private Sub btnExportMonths_Click(sender As Object, e As EventArgs) Handles btnExportMonths.Click
+        ExportListViewToCsv(lsvMonths, "annual_report_" & cboYear.Text)
+    End Sub
+
 End Class

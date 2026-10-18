@@ -31,6 +31,7 @@ Partial Class frmSetup
         Me.btnTabSuppliers = New Guna.UI2.WinForms.Guna2Button()
         Me.lblHint = New System.Windows.Forms.Label()
         Me.lsvData = New System.Windows.Forms.ListView()
+        Me.btnExportData = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.SuspendLayout()
         '
         'lblSetupTitle
@@ -168,9 +169,27 @@ Partial Class frmSetup
         Me.lsvData.HideSelection = False
         Me.lsvData.Location = New System.Drawing.Point(56, 320)
         Me.lsvData.Name = "lsvData"
-        Me.lsvData.Size = New System.Drawing.Size(1425, 710)
+        Me.lsvData.Size = New System.Drawing.Size(1425, 624)
         Me.lsvData.TabIndex = 8
         Me.lsvData.UseCompatibleStateImageBehavior = False
+        '
+        'btnExportData
+        '
+        Me.btnExportData.BorderRadius = 20
+        Me.btnExportData.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportData.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportData.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportData.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportData.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportData.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportData.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportData.Font = New System.Drawing.Font("Segoe UI", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportData.ForeColor = System.Drawing.Color.White
+        Me.btnExportData.Location = New System.Drawing.Point(1261, 969)
+        Me.btnExportData.Name = "btnExportData"
+        Me.btnExportData.Size = New System.Drawing.Size(220, 66)
+        Me.btnExportData.TabIndex = 90
+        Me.btnExportData.Text = "Export"
         '
         'frmSetup
         '
@@ -179,6 +198,7 @@ Partial Class frmSetup
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1535, 1061)
         Me.Controls.Add(Me.lsvData)
+        Me.Controls.Add(Me.btnExportData)
         Me.Controls.Add(Me.lblHint)
         Me.Controls.Add(Me.btnTabSuppliers)
         Me.Controls.Add(Me.btnTabItems)
@@ -203,4 +223,5 @@ Partial Class frmSetup
     Friend WithEvents btnTabSuppliers As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lblHint As Label
     Friend WithEvents lsvData As ListView
+    Friend WithEvents btnExportData As Guna.UI2.WinForms.Guna2GradientButton
 End Class

@@ -27,6 +27,7 @@ Partial Class frmAnnualReport
         Me.lblYear = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.cboYear = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.lsvMonths = New System.Windows.Forms.ListView()
+        Me.btnExportMonths = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
         Me.SuspendLayout()
         '
@@ -77,6 +78,24 @@ Partial Class frmAnnualReport
         Me.cboYear.Name = "cboYear"
         Me.cboYear.TabIndex = 3
         '
+        'btnExportMonths
+        '
+        Me.btnExportMonths.BorderRadius = 20
+        Me.btnExportMonths.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportMonths.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportMonths.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportMonths.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportMonths.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportMonths.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportMonths.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportMonths.Font = New System.Drawing.Font("Segoe UI", 16.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportMonths.ForeColor = System.Drawing.Color.White
+        Me.btnExportMonths.Location = New System.Drawing.Point(966, 810)
+        Me.btnExportMonths.Name = "btnExportMonths"
+        Me.btnExportMonths.Size = New System.Drawing.Size(220, 54)
+        Me.btnExportMonths.TabIndex = 90
+        Me.btnExportMonths.Text = "Export"
+        '
         'lsvMonths
         '
         Me.lsvMonths.Font = New System.Drawing.Font("Segoe UI", 16.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -111,6 +130,7 @@ Partial Class frmAnnualReport
         Me.ClientSize = New System.Drawing.Size(1420, 900)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.lsvMonths)
+        Me.Controls.Add(Me.btnExportMonths)
         Me.Controls.Add(Me.cboYear)
         Me.Controls.Add(Me.lblYear)
         Me.Controls.Add(Me.lblFormHint)
@@ -131,5 +151,6 @@ Partial Class frmAnnualReport
     Friend WithEvents lblYear As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents cboYear As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents lsvMonths As ListView
+    Friend WithEvents btnExportMonths As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents btnClose As Guna.UI2.WinForms.Guna2Button
 End Class

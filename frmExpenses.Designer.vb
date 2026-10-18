@@ -38,6 +38,7 @@ Partial Class frmExpenses
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lsvExpenses = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnExportExpenses = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnEdit = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.cboDateRange = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2Panel1.SuspendLayout()
@@ -223,13 +224,31 @@ Partial Class frmExpenses
         Me.lsvExpenses.HideSelection = False
         Me.lsvExpenses.Location = New System.Drawing.Point(56, 481)
         Me.lsvExpenses.Name = "lsvExpenses"
-        Me.lsvExpenses.Size = New System.Drawing.Size(1425, 549)
+        Me.lsvExpenses.Size = New System.Drawing.Size(1425, 463)
         Me.lsvExpenses.TabIndex = 57
         Me.lsvExpenses.UseCompatibleStateImageBehavior = False
         '
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Customer"
+        '
+        'btnExportExpenses
+        '
+        Me.btnExportExpenses.BorderRadius = 20
+        Me.btnExportExpenses.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportExpenses.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportExpenses.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportExpenses.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportExpenses.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportExpenses.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportExpenses.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportExpenses.Font = New System.Drawing.Font("Segoe UI", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportExpenses.ForeColor = System.Drawing.Color.White
+        Me.btnExportExpenses.Location = New System.Drawing.Point(1261, 971)
+        Me.btnExportExpenses.Name = "btnExportExpenses"
+        Me.btnExportExpenses.Size = New System.Drawing.Size(220, 66)
+        Me.btnExportExpenses.TabIndex = 90
+        Me.btnExportExpenses.Text = "Export"
         '
         'btnEdit
         '
@@ -273,6 +292,7 @@ Partial Class frmExpenses
         Me.Controls.Add(Me.cboDateRange)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.lsvExpenses)
+        Me.Controls.Add(Me.btnExportExpenses)
         Me.Controls.Add(Me.Guna2GradientPanel1)
         Me.Controls.Add(Me.Guna2Panel3)
         Me.Controls.Add(Me.Guna2Panel2)
@@ -308,6 +328,7 @@ Partial Class frmExpenses
     Friend WithEvents lblSalaryTotal As Label
     Friend WithEvents lblGrandTotal As Label
     Friend WithEvents lsvExpenses As ListView
+    Friend WithEvents btnExportExpenses As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents Label5 As Label

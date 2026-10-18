@@ -27,6 +27,7 @@ Partial Class frmInventory
         Me.btnStockOut = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.lsvInventory = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnExportInventory = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.SuspendLayout()
         '
         'lblSalesDelivery
@@ -36,7 +37,7 @@ Partial Class frmInventory
         Me.lblSalesDelivery.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.lblSalesDelivery.Location = New System.Drawing.Point(35, 41)
         Me.lblSalesDelivery.Name = "lblSalesDelivery"
-        Me.lblSalesDelivery.Size = New System.Drawing.Size(416, 118)
+        Me.lblSalesDelivery.Size = New System.Drawing.Size(420, 104)
         Me.lblSalesDelivery.TabIndex = 15
         Me.lblSalesDelivery.Text = "Inventory"
         '
@@ -83,7 +84,7 @@ Partial Class frmInventory
         Me.lsvInventory.HideSelection = False
         Me.lsvInventory.Location = New System.Drawing.Point(53, 196)
         Me.lsvInventory.Name = "lsvInventory"
-        Me.lsvInventory.Size = New System.Drawing.Size(1406, 836)
+        Me.lsvInventory.Size = New System.Drawing.Size(1406, 750)
         Me.lsvInventory.TabIndex = 32
         Me.lsvInventory.UseCompatibleStateImageBehavior = False
         '
@@ -91,13 +92,32 @@ Partial Class frmInventory
         '
         Me.ColumnHeader1.Text = "Customer"
         '
+        'btnExportInventory
+        '
+        Me.btnExportInventory.BorderRadius = 20
+        Me.btnExportInventory.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportInventory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportInventory.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportInventory.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportInventory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportInventory.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportInventory.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportInventory.Font = New System.Drawing.Font("Segoe UI", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportInventory.ForeColor = System.Drawing.Color.White
+        Me.btnExportInventory.Location = New System.Drawing.Point(1239, 972)
+        Me.btnExportInventory.Name = "btnExportInventory"
+        Me.btnExportInventory.Size = New System.Drawing.Size(220, 66)
+        Me.btnExportInventory.TabIndex = 90
+        Me.btnExportInventory.Text = "Export"
+        '
         'frmInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1535, 1082)
+        Me.ClientSize = New System.Drawing.Size(1535, 1061)
         Me.Controls.Add(Me.lsvInventory)
+        Me.Controls.Add(Me.btnExportInventory)
         Me.Controls.Add(Me.btnStockOut)
         Me.Controls.Add(Me.btnStockIn)
         Me.Controls.Add(Me.lblSalesDelivery)
@@ -112,5 +132,6 @@ Partial Class frmInventory
     Friend WithEvents btnStockIn As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents btnStockOut As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents lsvInventory As ListView
+    Friend WithEvents btnExportInventory As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents ColumnHeader1 As ColumnHeader
 End Class

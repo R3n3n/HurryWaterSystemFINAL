@@ -27,6 +27,7 @@ Partial Class frmDispenserBorrowing
         Me.btnMarkReturned = New Guna.UI2.WinForms.Guna2Button()
         Me.lsvBorrowing = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnExportBorrowing = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.SuspendLayout()
         '
         'Guna2HtmlLabel1
@@ -83,13 +84,31 @@ Partial Class frmDispenserBorrowing
         Me.lsvBorrowing.HideSelection = False
         Me.lsvBorrowing.Location = New System.Drawing.Point(38, 184)
         Me.lsvBorrowing.Name = "lsvBorrowing"
-        Me.lsvBorrowing.Size = New System.Drawing.Size(1463, 849)
+        Me.lsvBorrowing.Size = New System.Drawing.Size(1463, 763)
         Me.lsvBorrowing.TabIndex = 58
         Me.lsvBorrowing.UseCompatibleStateImageBehavior = False
         '
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Customer"
+        '
+        'btnExportBorrowing
+        '
+        Me.btnExportBorrowing.BorderRadius = 20
+        Me.btnExportBorrowing.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportBorrowing.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnExportBorrowing.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportBorrowing.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnExportBorrowing.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnExportBorrowing.FillColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(110, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.btnExportBorrowing.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btnExportBorrowing.Font = New System.Drawing.Font("Segoe UI", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportBorrowing.ForeColor = System.Drawing.Color.White
+        Me.btnExportBorrowing.Location = New System.Drawing.Point(1281, 972)
+        Me.btnExportBorrowing.Name = "btnExportBorrowing"
+        Me.btnExportBorrowing.Size = New System.Drawing.Size(220, 66)
+        Me.btnExportBorrowing.TabIndex = 90
+        Me.btnExportBorrowing.Text = "Export"
         '
         'frmDispenserBorrowing
         '
@@ -98,6 +117,7 @@ Partial Class frmDispenserBorrowing
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1535, 1061)
         Me.Controls.Add(Me.lsvBorrowing)
+        Me.Controls.Add(Me.btnExportBorrowing)
         Me.Controls.Add(Me.btnMarkReturned)
         Me.Controls.Add(Me.btnAddBorrow)
         Me.Controls.Add(Me.Guna2HtmlLabel1)
@@ -112,5 +132,6 @@ Partial Class frmDispenserBorrowing
     Friend WithEvents btnAddBorrow As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents btnMarkReturned As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lsvBorrowing As ListView
+    Friend WithEvents btnExportBorrowing As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents ColumnHeader1 As ColumnHeader
 End Class

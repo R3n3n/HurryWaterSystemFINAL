@@ -122,4 +122,9 @@ Public Class frmProductionHistory
     Private Sub cboFilterTank_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFilterTank.SelectedIndexChanged
         If Not isLoading Then LoadLogs()
     End Sub
+
+    Private Sub btnExportLogs_Click(sender As Object, e As EventArgs) Handles btnExportLogs.Click
+        ExportListViewToCsv(lsvLogs, "production_history")
+    End Sub
+
 End Class

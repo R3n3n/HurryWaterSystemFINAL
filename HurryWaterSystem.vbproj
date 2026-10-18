@@ -335,6 +335,10 @@
     <Compile Include="modOrderRules.vb" />
     <Compile Include="modProductRules.vb" />
     <Compile Include="modSearchableCombo.vb" />
+    <Compile Include="modExport.vb" />
+    <Compile Include="frmOrderDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="modSchemaUpdates.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -398,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditSupplier.resx">
       <DependentUpon>frmEditSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderDetails.resx">
+      <DependentUpon>frmOrderDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSetup.resx">
       <DependentUpon>frmSetup.vb</DependentUpon>
